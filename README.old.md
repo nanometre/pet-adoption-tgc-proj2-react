@@ -72,5 +72,3 @@ User Stories | Acceptance Criteria(s)
 ## Credits
 1. Schema Validation with Yup and Express.js
 https://dev.to/franciscomendes10866/schema-validation-with-yup-and-express-js-3l19
-
-2. Icons created by Nikita Golubev from Flaticon
