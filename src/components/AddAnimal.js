@@ -3,7 +3,9 @@ import React from 'react'
 export default function AddAnimal() {
     return (
         <React.Fragment>
-            <h1>Add Animal</h1>
+            <div className='container-fluid'>
+                <h3>Add Animal</h3>
+            </div>
         </React.Fragment>
     )
 }

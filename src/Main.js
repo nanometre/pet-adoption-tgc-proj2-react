@@ -2,10 +2,11 @@ import React from "react";
 import axios from "axios";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Loading from "./components/Loading";
 import Home from "./components/Home"
 import BrowseAndSearch from "./components/BrowseAndSearch";
 import AddAnimal from "./components/AddAnimal";
-import Guide from "./components/Guide";
+import AdoptionProcess from "./components/AdoptionProcess";
 
 
 class Main extends React.Component {
@@ -27,15 +28,16 @@ class Main extends React.Component {
 
     renderPage = () => {
         if (this.state.loaded === false) {
-            return <h1>Loading...</h1>
+            return <Loading />
         } else if (this.state.active === 'home') {
-            return <Home animals={this.state.animals} />
+            return <Home animals={this.state.animals}
+                         setActive={this.setActive} />
         } else if (this.state.active === 'browse') {
             return <BrowseAndSearch />
         } else if (this.state.active === 'addAnimal') {
             return <AddAnimal />
-        } else if (this.state.active === 'guide') {
-            return <Guide />
+        } else if (this.state.active === 'adoptionProcess') {
+            return <AdoptionProcess />
         }
     }
 

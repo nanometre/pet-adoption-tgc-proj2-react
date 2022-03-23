@@ -3,7 +3,9 @@ import React from 'react';
 export default function Footer() {
     return (
         <React.Fragment>
-            <h1>Footer</h1>
+            <div className='container-fluid'>
+                <h3>Footer</h3>
+            </div>
         </React.Fragment>
     )
 }

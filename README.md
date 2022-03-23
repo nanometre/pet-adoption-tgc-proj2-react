@@ -74,3 +74,5 @@ User Stories | Acceptance Criteria(s)
 https://dev.to/franciscomendes10866/schema-validation-with-yup-and-express-js-3l19
 
 2. Icons created by Nikita Golubev from Flaticon
+
+3. Loading animation is by Prime from LottieFiles https://lottiefiles.com/43017-animal-care-loading
