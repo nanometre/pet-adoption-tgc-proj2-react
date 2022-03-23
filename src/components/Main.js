@@ -1,12 +1,12 @@
 import React from "react";
 import axios from "axios";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Loading from "./components/Loading";
-import Home from "./components/Home"
-import BrowseAndSearch from "./components/BrowseAndSearch";
-import AddAnimal from "./components/AddAnimal";
-import AdoptionProcess from "./components/AdoptionProcess";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import Loading from "./Loading";
+import Home from "./Home"
+import BrowseAndSearch from "./BrowseAndSearch";
+import AddAnimal from "./AddAnimal";
+import AdoptionProcess from "./AdoptionProcess";
 
 
 class Main extends React.Component {
@@ -33,9 +33,10 @@ class Main extends React.Component {
             return <Home animals={this.state.animals}
                          setActive={this.setActive} />
         } else if (this.state.active === 'browse') {
-            return <BrowseAndSearch />
+            return <BrowseAndSearch animals={this.state.animals}
+                                    setActive={this.setActive}/>
         } else if (this.state.active === 'addAnimal') {
-            return <AddAnimal />
+            return <AddAnimal BASE_API_URL={this.BASE_API_URL}/>
         } else if (this.state.active === 'adoptionProcess') {
             return <AdoptionProcess />
         }

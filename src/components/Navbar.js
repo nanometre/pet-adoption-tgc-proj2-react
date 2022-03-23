@@ -2,9 +2,10 @@ import React from "react";
 
 export default function Navbar(props) {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light sticky-top" style={{ backgroundColor: "#f1f1f1" }}>
             <div className="container-fluid">
                 <img src={require('../assets/images/paw-logo.png')}
+                     role='button'
                      alt="Pawprint"
                      style={{height: '32px'}}
                      onClick={()=>props.setActive('home')}/>

@@ -16,8 +16,8 @@ export default function Loading() {
         <React.Fragment>
             <Lottie
                 options={defaultOptions}
-                height={300}
-                width={300}
+                height={400}
+                width={400}
             />
         </React.Fragment>
     )

@@ -4,8 +4,10 @@ export default function Home(props) {
     return (
         <React.Fragment>
             <div className="container-fluid">
-                <h3>All animals</h3>
+                <h3>Adopt an animal and save a life!</h3>
+                {/* Consider adding a carousel */}
                 <div className="d-flex flex-wrap justify-content-around">
+                    {/* TO AMEND TO ALLOW ONLY SHOW A FIXED NUMBER OF ANIMALS. MAYBE 3 */}
                     {props.animals.map((animal, i) => {
                         return (
                             <React.Fragment key={animal._id}>
