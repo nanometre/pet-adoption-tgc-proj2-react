@@ -7,7 +7,7 @@ export default function Navbar(props) {
                 <img src={require('../assets/images/paw-logo.png')}
                      role='button'
                      alt="Pawprint"
-                     style={{height: '32px'}}
+                     style={{height: '40px'}}
                      onClick={()=>props.setActive('home')}/>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span className="navbar-toggler-icon"></span>
