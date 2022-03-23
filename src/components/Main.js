@@ -10,7 +10,7 @@ import AdoptionProcess from "./AdoptionProcess";
 
 
 class Main extends React.Component {
-    BASE_API_URL = 'https://pet-adoption-tgc-proj2-express.herokuapp.com/'
+    BASE_API_URL = 'https://pet-adoption-tgc-proj2-express.herokuapp.com/animals'
 
     state = {
         animals: [],
@@ -19,7 +19,7 @@ class Main extends React.Component {
     }
 
     async componentDidMount() {
-        let response = await axios.get(this.BASE_API_URL + 'animals/show')
+        let response = await axios.get(this.BASE_API_URL + '/show')
         this.setState({
             animals: response.data,
             loaded: true
