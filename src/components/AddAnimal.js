@@ -1,10 +1,7 @@
 import React from 'react'
-// import axios from 'axios'
+import axios from 'axios'
 
 export default class AddAnimal extends React.Component {
-    // Double check this way of assigning is correct
-    // BASE_API_URL = this.props.BASE_API_URL
-
     state = {
         newName: "",
         newImgUrl: "",
@@ -16,7 +13,9 @@ export default class AddAnimal extends React.Component {
         newStatusTags: [],
         newAdoptFoster: [],
         newCaretakerName: "",
-        newCaretakerEmail: ""
+        newCaretakerEmail: "",
+
+        formFilled: false
     }
 
     renderForm = () => {
@@ -31,22 +30,23 @@ export default class AddAnimal extends React.Component {
                             type="text"
                             name="newName"
                             value={this.state.newName}
-                            onChange={this.updateFormField} />
+                            onChange={this.updateFormField} 
+                            required />
+                        {/* <span>{this.state.newName ? "" : "Name is required"}</span> */}
                     </div>
                     <div>
                         <div>
                             <label className="form-check-label" >Species</label>
                         </div>
                         <div>
-                            <select class="form-select" name="newSpecies" onChange={this.updateFormField}>
-                                <option value="Dog"
-                                        selected={this.state.newSpecies === "Dog"}>Dog</option>
-                                <option value="Cat"
-                                        selected={this.state.newSpecies === "Cat"}>Cat</option>
-                                <option value="Hamster"
-                                        selected={this.state.newSpecies === "Hamster"}>Hamster</option>
-                                <option value="Others"
-                                        selected={this.state.newSpecies === "Others"}>Others</option>
+                            <select className="form-select"
+                                name="newSpecies"
+                                onChange={this.updateFormField}
+                                value={this.state.newSpecies}>
+                                <option value="Dog">Dog</option>
+                                <option value="Cat">Cat</option>
+                                <option value="Hamster">Hamster</option>
+                                <option value="Others">Others</option>
                             </select>
                         </div>
                     </div>
@@ -63,11 +63,12 @@ export default class AddAnimal extends React.Component {
                             <label className="form-check-label" >Gender</label>
                         </div>
                         <div>
-                            <select class="form-select" name="newGender" onChange={this.updateFormField}>
-                                <option value="Male"
-                                        selected={this.state.newGender === "Male"}>Male</option>
-                                <option value="Female"
-                                        selected={this.state.newGender === "Female"}>Female</option>
+                            <select className="form-select"
+                                name="newGender"
+                                onChange={this.updateFormField}
+                                value={this.state.newGender}>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
                             </select>
                         </div>
                     </div>
@@ -92,7 +93,7 @@ export default class AddAnimal extends React.Component {
                                 onChange={this.updateCheckbox}
                                 checked={this.state.newStatusTags.includes("H")}
                                 id="hdb-approved" />
-                            <label className="form-check-label" for="hdb-approved">HDB Approved</label>
+                            <label className="form-check-label" htmlFor="hdb-approved">HDB Approved</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input"
@@ -102,7 +103,7 @@ export default class AddAnimal extends React.Component {
                                 onChange={this.updateCheckbox}
                                 checked={this.state.newStatusTags.includes("M")}
                                 id="microchipped" />
-                            <label className="form-check-label" for="microchipped">Microchipped</label>
+                            <label className="form-check-label" htmlFor="microchipped">Microchipped</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input"
@@ -112,7 +113,7 @@ export default class AddAnimal extends React.Component {
                                 onChange={this.updateCheckbox}
                                 checked={this.state.newStatusTags.includes("S")}
                                 id="sterilised" />
-                            <label className="form-check-label" for="sterilised">Sterilised</label>
+                            <label className="form-check-label" htmlFor="sterilised">Sterilised</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input"
@@ -122,7 +123,7 @@ export default class AddAnimal extends React.Component {
                                 onChange={this.updateCheckbox}
                                 checked={this.state.newStatusTags.includes("V")}
                                 id="vaccinated" />
-                            <label className="form-check-label" for="vaccinated">Vaccinated</label>
+                            <label className="form-check-label" htmlFor="vaccinated">Vaccinated</label>
                         </div>
                     </div>
                     <div>
@@ -136,7 +137,7 @@ export default class AddAnimal extends React.Component {
                             onChange={this.updateCheckbox}
                             checked={this.state.newAdoptFoster.includes("Adopt")}
                             id="adopt" />
-                        <label className="form-check-label" for="adopt">Adopt</label>
+                        <label className="form-check-label" htmlFor="adopt">Adopt</label>
                     </div>
                     <div className="form-check form-check-inline">
                         <input className="form-check-input"
@@ -146,7 +147,7 @@ export default class AddAnimal extends React.Component {
                             onChange={this.updateCheckbox}
                             checked={this.state.newAdoptFoster.includes("Foster")}
                             id="foster" />
-                        <label className="form-check-label" for="foster">Foster</label>
+                        <label className="form-check-label" htmlFor="foster">Foster</label>
                     </div>
                     <div>
                         <label>Description</label>
@@ -183,6 +184,14 @@ export default class AddAnimal extends React.Component {
                             value={this.state.newCaretakerEmail}
                             onChange={this.updateFormField} />
                     </div>
+                    <div>
+                        <button className="btn btn-secondary"
+                            onClick={() => this.props.setActive('home')}>Cancel</button>
+                        <button className="btn btn-primary"
+                            type="submit"
+                            disabled={!this.state.formFilled}
+                            onClick={() => this.addNewAnimal()}>Submit</button>
+                    </div>
                 </div>
             </div>
         )
@@ -206,6 +215,29 @@ export default class AddAnimal extends React.Component {
                 [key]: [...this.state[key], evt.target.value]
             })
         }
+    }
+
+    addNewAnimal = async () => {
+        let newAnimal = {
+            "name": this.state.newName,
+            "img_url": this.state.newImgUrl,
+            "gender": this.state.newGender,
+            "date_of_birth": this.state.newDateOfBirth,
+            "species": {
+                "species_name": this.state.newSpecies,
+                "breed": this.state.newBreed
+            },
+            "description": this.state.newDescription,
+            "status_tags": this.state.newStatusTags,
+            "adopt_foster": this.state.newAdoptFoster,
+            "current_caretaker": {
+                "caretaker_name": this.state.newCaretakerName,
+                "email": this.state.newCaretakerEmail
+            }
+        }
+
+        await axios.post(this.props.BASE_API_URL, newAnimal)
+        this.props.processAddNewAnimal(newAnimal)
     }
 
     render() {

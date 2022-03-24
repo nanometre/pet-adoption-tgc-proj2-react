@@ -36,7 +36,9 @@ class Main extends React.Component {
             return <BrowseAndSearch animals={this.state.animals}
                                     setActive={this.setActive}/>
         } else if (this.state.active === 'addAnimal') {
-            return <AddAnimal BASE_API_URL={this.BASE_API_URL}/>
+            return <AddAnimal BASE_API_URL={this.BASE_API_URL}
+                              setActive={this.setActive}
+                              processAddNewAnimal={this.processAddNewAnimal}/>
         } else if (this.state.active === 'adoptionProcess') {
             return <AdoptionProcess />
         }
@@ -45,6 +47,13 @@ class Main extends React.Component {
     setActive = (page) => {
         this.setState({
             active: page
+        })
+    }
+
+    processAddNewAnimal = (newAnimal) => {
+        this.setState({
+            animals: [...this.state.animals, newAnimal],
+            active: "home"
         })
     }
 

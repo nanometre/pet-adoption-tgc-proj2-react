@@ -4,7 +4,7 @@ export default function Home(props) {
     return (
         <React.Fragment>
             <div className="container-fluid">
-                <h3>Adopt an animal and save a life!</h3>
+                <h3>Adopt an animal today and save a life!</h3>
                 {/* Consider adding a carousel */}
                 <div className="d-flex flex-wrap justify-content-around">
                     {/* TO AMEND TO ALLOW ONLY SHOW A FIXED NUMBER OF ANIMALS. MAYBE 3 */}
@@ -40,6 +40,10 @@ export default function Home(props) {
                                                             <p>Available for: {animal.adopt_foster.map(af => <li key={af}>{af}</li>)}</p>
                                                             <p>Caretaker: {animal.current_caretaker.caretaker_name}</p>
                                                             <p>Caretaker's Email: {animal.current_caretaker.email}</p>
+                                                            <p>
+                                                                <i>Legends for Status Tags:</i><br/>
+                                                                <i>H: HDB Approved, M: Microchipped, S: Sterilised, V: Vaccinated</i>
+                                                            </p>
                                                         </div>
                                                     </div>
                                                     <div className="modal-footer">
