@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { addAnimalSchema } from '../validations'
 
 export default class AddAnimal extends React.Component {
     state = {
@@ -14,8 +15,6 @@ export default class AddAnimal extends React.Component {
         newAdoptFoster: [],
         newCaretakerName: "",
         newCaretakerEmail: "",
-
-        formFilled: false
     }
 
     renderForm = () => {
@@ -23,7 +22,7 @@ export default class AddAnimal extends React.Component {
             <div className='container-fluid d-flex flex-column align-items-center'>
                 <h3>Add Animal</h3>
                 <div style={{ width: "60%" }}>
-                    <form>
+                    <form onSubmit={this.addNewAnimal}>
                         <h5>Animal's Details</h5>
                         <div>
                             <label>Name</label>
@@ -31,8 +30,7 @@ export default class AddAnimal extends React.Component {
                                 type="text"
                                 name="newName"
                                 value={this.state.newName}
-                                onChange={this.updateFormField}
-                                required />
+                                onChange={this.updateFormField}/>
                             {/* <span>{this.state.newName ? "" : "Name is required"}</span> */}
                         </div>
                         <div>
@@ -185,15 +183,12 @@ export default class AddAnimal extends React.Component {
                                 value={this.state.newCaretakerEmail}
                                 onChange={this.updateFormField} />
                         </div>
-                        <div>
-                            <button className="btn btn-secondary"
-                                onClick={() => this.props.setActive('home')}>Cancel</button>
-                            <button className="btn btn-primary"
-                                type="submit"
-                                // Do I need the button to be disabled? Maybe one function can cover all the validation.
-                                disabled={!this.state.formFilled}
-                                onClick={() => this.addNewAnimal()}>Submit</button>
-                        </div>
+                        <button className="btn btn-secondary"
+                            onClick={() => this.props.setActive('home')}>Cancel</button>
+                        <button className="btn btn-primary"
+                            type="submit"
+                        // onClick={() => this.addNewAnimal()}
+                        >Submit</button>
                     </form>
                 </div>
             </div>
@@ -220,7 +215,8 @@ export default class AddAnimal extends React.Component {
         }
     }
 
-    addNewAnimal = async () => {
+    addNewAnimal = async (event) => {
+        event.preventDefault();
         let newAnimal = {
             "name": this.state.newName,
             "img_url": this.state.newImgUrl,
@@ -238,9 +234,12 @@ export default class AddAnimal extends React.Component {
                 "email": this.state.newCaretakerEmail
             }
         }
-
-        await axios.post(this.props.BASE_API_URL, newAnimal)
-        this.props.processAddNewAnimal(newAnimal)
+        let isValid = await addAnimalSchema.isValid(newAnimal);
+        console.log(isValid)
+        if (isValid) {
+            await axios.post(this.props.BASE_API_URL, newAnimal)
+            this.props.processAddNewAnimal(newAnimal)
+        }
     }
 
     render() {
