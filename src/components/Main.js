@@ -19,7 +19,7 @@ class Main extends React.Component {
     }
 
     async componentDidMount() {
-        let response = await axios.get(this.BASE_API_URL + '/show')
+        let response = await axios.get(this.BASE_API_URL)
         this.setState({
             animals: response.data,
             loaded: true

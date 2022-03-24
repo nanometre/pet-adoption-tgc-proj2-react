@@ -19,6 +19,7 @@ export default function Footer() {
                             src={LinkedIn}
                             role="button"
                             onClick={()=>openInNewTab("https://www.linkedin.com/in/benedictwcy/")}
+                            alt="LinkedIn Logo"
                         />
                         {/* <!-- Github --> */}
                         <img
@@ -26,6 +27,7 @@ export default function Footer() {
                             src={Github}
                             role="button"
                             onClick={()=>openInNewTab("https://github.com/nanometre")}
+                            alt="Github Logo"
                         />
                         {/* <!-- Email --> */}
                         <img
@@ -33,6 +35,7 @@ export default function Footer() {
                             src={Email}
                             role="button"
                             onClick={()=>openInNewTab("mailto:benedictwcy@hotmail.com")}
+                            alt="Email Logo"
                         />
                     </section>
                     {/* <!-- Section: Social media --> */}

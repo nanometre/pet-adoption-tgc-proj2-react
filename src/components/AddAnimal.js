@@ -23,175 +23,178 @@ export default class AddAnimal extends React.Component {
             <div className='container-fluid d-flex flex-column align-items-center'>
                 <h3>Add Animal</h3>
                 <div style={{ width: "60%" }}>
-                    <h5>Animal's Details</h5>
-                    <div>
-                        <label>Name</label>
-                        <input className="form-control"
-                            type="text"
-                            name="newName"
-                            value={this.state.newName}
-                            onChange={this.updateFormField} 
-                            required />
-                        {/* <span>{this.state.newName ? "" : "Name is required"}</span> */}
-                    </div>
-                    <div>
+                    <form>
+                        <h5>Animal's Details</h5>
                         <div>
-                            <label className="form-check-label" >Species</label>
-                        </div>
-                        <div>
-                            <select className="form-select"
-                                name="newSpecies"
+                            <label>Name</label>
+                            <input className="form-control"
+                                type="text"
+                                name="newName"
+                                value={this.state.newName}
                                 onChange={this.updateFormField}
-                                value={this.state.newSpecies}>
-                                <option value="Dog">Dog</option>
-                                <option value="Cat">Cat</option>
-                                <option value="Hamster">Hamster</option>
-                                <option value="Others">Others</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label>Breed</label>
-                        <input className="form-control"
-                            type="text"
-                            name="newBreed"
-                            value={this.state.newBreed}
-                            onChange={this.updateFormField} />
-                    </div>
-                    <div>
-                        <div>
-                            <label className="form-check-label" >Gender</label>
+                                required />
+                            {/* <span>{this.state.newName ? "" : "Name is required"}</span> */}
                         </div>
                         <div>
-                            <select className="form-select"
-                                name="newGender"
+                            <div>
+                                <label className="form-check-label" >Species</label>
+                            </div>
+                            <div>
+                                <select className="form-select"
+                                    name="newSpecies"
+                                    onChange={this.updateFormField}
+                                    value={this.state.newSpecies}>
+                                    <option value="Dog">Dog</option>
+                                    <option value="Cat">Cat</option>
+                                    <option value="Hamster">Hamster</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Breed</label>
+                            <input className="form-control"
+                                type="text"
+                                name="newBreed"
+                                value={this.state.newBreed}
+                                onChange={this.updateFormField} />
+                        </div>
+                        <div>
+                            <div>
+                                <label className="form-check-label" >Gender</label>
+                            </div>
+                            <div>
+                                <select className="form-select"
+                                    name="newGender"
+                                    onChange={this.updateFormField}
+                                    value={this.state.newGender}>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Date of Birth</label>
+                            <input className="form-control"
+                                type="text"
+                                name="newDateOfBirth"
+                                value={this.state.newDateOfBirth}
                                 onChange={this.updateFormField}
-                                value={this.state.newGender}>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
+                                placeholder="YYYY-MM-DD" />
                         </div>
-                    </div>
-                    <div>
-                        <label>Date of Birth</label>
-                        <input className="form-control"
-                            type="text"
-                            name="newDateOfBirth"
-                            value={this.state.newDateOfBirth}
-                            onChange={this.updateFormField}
-                            placeholder="YYYY-MM-DD" />
-                    </div>
-                    <div>
                         <div>
-                            <label className="form-check-label" >Status Tags</label>
+                            <div>
+                                <label className="form-check-label" >Status Tags</label>
+                            </div>
+                            <div className="form-check form-check-inline">
+                                <input className="form-check-input"
+                                    type="checkbox"
+                                    name="newStatusTags"
+                                    value="H"
+                                    onChange={this.updateCheckbox}
+                                    checked={this.state.newStatusTags.includes("H")}
+                                    id="hdb-approved" />
+                                <label className="form-check-label" htmlFor="hdb-approved">HDB Approved</label>
+                            </div>
+                            <div className="form-check form-check-inline">
+                                <input className="form-check-input"
+                                    type="checkbox"
+                                    name="newStatusTags"
+                                    value="M"
+                                    onChange={this.updateCheckbox}
+                                    checked={this.state.newStatusTags.includes("M")}
+                                    id="microchipped" />
+                                <label className="form-check-label" htmlFor="microchipped">Microchipped</label>
+                            </div>
+                            <div className="form-check form-check-inline">
+                                <input className="form-check-input"
+                                    type="checkbox"
+                                    name="newStatusTags"
+                                    value="S"
+                                    onChange={this.updateCheckbox}
+                                    checked={this.state.newStatusTags.includes("S")}
+                                    id="sterilised" />
+                                <label className="form-check-label" htmlFor="sterilised">Sterilised</label>
+                            </div>
+                            <div className="form-check form-check-inline">
+                                <input className="form-check-input"
+                                    type="checkbox"
+                                    name="newStatusTags"
+                                    value="V"
+                                    onChange={this.updateCheckbox}
+                                    checked={this.state.newStatusTags.includes("V")}
+                                    id="vaccinated" />
+                                <label className="form-check-label" htmlFor="vaccinated">Vaccinated</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label className="form-check-label" >Available for</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input"
                                 type="checkbox"
-                                name="newStatusTags"
-                                value="H"
+                                name="newAdoptFoster"
+                                value="Adopt"
                                 onChange={this.updateCheckbox}
-                                checked={this.state.newStatusTags.includes("H")}
-                                id="hdb-approved" />
-                            <label className="form-check-label" htmlFor="hdb-approved">HDB Approved</label>
+                                checked={this.state.newAdoptFoster.includes("Adopt")}
+                                id="adopt" />
+                            <label className="form-check-label" htmlFor="adopt">Adopt</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input"
                                 type="checkbox"
-                                name="newStatusTags"
-                                value="M"
+                                name="newAdoptFoster"
+                                value="Foster"
                                 onChange={this.updateCheckbox}
-                                checked={this.state.newStatusTags.includes("M")}
-                                id="microchipped" />
-                            <label className="form-check-label" htmlFor="microchipped">Microchipped</label>
+                                checked={this.state.newAdoptFoster.includes("Foster")}
+                                id="foster" />
+                            <label className="form-check-label" htmlFor="foster">Foster</label>
                         </div>
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input"
-                                type="checkbox"
-                                name="newStatusTags"
-                                value="S"
-                                onChange={this.updateCheckbox}
-                                checked={this.state.newStatusTags.includes("S")}
-                                id="sterilised" />
-                            <label className="form-check-label" htmlFor="sterilised">Sterilised</label>
+                        <div>
+                            <label>Description</label>
+                            <textarea className="form-control"
+                                name="newDescription"
+                                value={this.state.newDescription}
+                                onChange={this.updateFormField}
+                                placeholder="Write a short description on the animal"
+                                rows="5"></textarea>
                         </div>
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input"
-                                type="checkbox"
-                                name="newStatusTags"
-                                value="V"
-                                onChange={this.updateCheckbox}
-                                checked={this.state.newStatusTags.includes("V")}
-                                id="vaccinated" />
-                            <label className="form-check-label" htmlFor="vaccinated">Vaccinated</label>
+                        <div>
+                            <label>Image URL of Animal</label>
+                            <input className="form-control"
+                                type="text"
+                                name="newImgUrl"
+                                value={this.state.newImgUrl}
+                                onChange={this.updateFormField} />
                         </div>
-                    </div>
-                    <div>
-                        <label className="form-check-label" >Available for</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input"
-                            type="checkbox"
-                            name="newAdoptFoster"
-                            value="Adopt"
-                            onChange={this.updateCheckbox}
-                            checked={this.state.newAdoptFoster.includes("Adopt")}
-                            id="adopt" />
-                        <label className="form-check-label" htmlFor="adopt">Adopt</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input"
-                            type="checkbox"
-                            name="newAdoptFoster"
-                            value="Foster"
-                            onChange={this.updateCheckbox}
-                            checked={this.state.newAdoptFoster.includes("Foster")}
-                            id="foster" />
-                        <label className="form-check-label" htmlFor="foster">Foster</label>
-                    </div>
-                    <div>
-                        <label>Description</label>
-                        <textarea className="form-control"
-                            name="newDescription"
-                            value={this.state.newDescription}
-                            onChange={this.updateFormField}
-                            placeholder="Write a short description on the animal"
-                            rows="5"></textarea>
-                    </div>
-                    <div>
-                        <label>Image URL of Animal</label>
-                        <input className="form-control"
-                            type="text"
-                            name="newImgUrl"
-                            value={this.state.newImgUrl}
-                            onChange={this.updateFormField} />
-                    </div>
-                    <h5>Current Caretaker's Details</h5>
-                    <div>
-                        <label>Name</label>
-                        <input className="form-control"
-                            type="text"
-                            name="newCaretakerName"
-                            value={this.state.newCaretakerName}
-                            onChange={this.updateFormField}
-                            placeholder="Name of individual or organisation" />
-                    </div>
-                    <div>
-                        <label>Email</label>
-                        <input className="form-control"
-                            type="text"
-                            name="newCaretakerEmail"
-                            value={this.state.newCaretakerEmail}
-                            onChange={this.updateFormField} />
-                    </div>
-                    <div>
-                        <button className="btn btn-secondary"
-                            onClick={() => this.props.setActive('home')}>Cancel</button>
-                        <button className="btn btn-primary"
-                            type="submit"
-                            disabled={!this.state.formFilled}
-                            onClick={() => this.addNewAnimal()}>Submit</button>
-                    </div>
+                        <h5>Current Caretaker's Details</h5>
+                        <div>
+                            <label>Name</label>
+                            <input className="form-control"
+                                type="text"
+                                name="newCaretakerName"
+                                value={this.state.newCaretakerName}
+                                onChange={this.updateFormField}
+                                placeholder="Name of individual or organisation" />
+                        </div>
+                        <div>
+                            <label>Email</label>
+                            <input className="form-control"
+                                type="text"
+                                name="newCaretakerEmail"
+                                value={this.state.newCaretakerEmail}
+                                onChange={this.updateFormField} />
+                        </div>
+                        <div>
+                            <button className="btn btn-secondary"
+                                onClick={() => this.props.setActive('home')}>Cancel</button>
+                            <button className="btn btn-primary"
+                                type="submit"
+                                // Do I need the button to be disabled? Maybe one function can cover all the validation.
+                                disabled={!this.state.formFilled}
+                                onClick={() => this.addNewAnimal()}>Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         )
