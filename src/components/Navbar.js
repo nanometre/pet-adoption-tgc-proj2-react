@@ -31,6 +31,11 @@ export default function Navbar(props) {
                         </li>
                         <li className="nav-item">
                             <button className="nav-link active btn"
+                                    onClick={()=>props.setActive("manageAnimals")}
+                                    >Manage Listings</button>
+                        </li>
+                        <li className="nav-item">
+                            <button className="nav-link active btn"
                                     onClick={()=>props.setActive("adoptionProcess")}
                                     >Adoption Process</button>
                         </li>

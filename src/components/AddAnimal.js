@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import AddAnimalForm from './AddAnimalForm'
+import AddAnimalForm from './form/AddAnimalForm'
 
 export default class AddAnimal extends React.Component {
     state = {
@@ -17,16 +17,19 @@ export default class AddAnimal extends React.Component {
         newCaretakerEmail: "",
     }
 
+    // function to change active page
     setActive = (page) => {
         this.props.setActive(page)
     }
 
+    // function for form fields 2 way binding
     updateFormField = (evt) => {
         this.setState({
             [evt.target.name]: evt.target.value
         })
     }
 
+    // function for checkboxes 2 way binding
     updateCheckbox = (evt) => {
         let key = evt.target.name
         if (this.state[key].includes(evt.target.value)) {
@@ -41,6 +44,7 @@ export default class AddAnimal extends React.Component {
         }
     }
 
+    // post request to backend server
     addNewAnimal = async () => {
         let newAnimal = {
             "name": this.state.newName,

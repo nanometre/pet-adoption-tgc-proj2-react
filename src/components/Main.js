@@ -7,6 +7,7 @@ import Home from "./Home"
 import BrowseAndSearch from "./BrowseAndSearch";
 import AddAnimal from "./AddAnimal";
 import AdoptionProcess from "./AdoptionProcess";
+import ManageAnimals from "./ManageAnimals";
 
 
 class Main extends React.Component {
@@ -20,12 +21,14 @@ class Main extends React.Component {
 
     async componentDidMount() {
         let response = await axios.get(this.BASE_API_URL)
+        document.title = "Paw Pals"
         this.setState({
             animals: response.data,
             loaded: true
         })
     }
 
+    // function for single page application
     renderPage = () => {
         if (this.state.loaded === false) {
             return <Loading />
@@ -41,15 +44,19 @@ class Main extends React.Component {
                               processAddNewAnimal={this.processAddNewAnimal}/>
         } else if (this.state.active === 'adoptionProcess') {
             return <AdoptionProcess />
+        } else if (this.state.active === 'manageAnimals') {
+            return <ManageAnimals />
         }
     }
 
+    // function to set active page
     setActive = (page) => {
         this.setState({
             active: page
         })
     }
 
+    // function to add newly added animal to state
     processAddNewAnimal = (newAnimal) => {
         this.setState({
             animals: [...this.state.animals, newAnimal],

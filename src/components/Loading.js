@@ -2,6 +2,7 @@ import React from 'react';
 import Lottie from 'react-lottie';
 import animationData from '../assets/images/paw-loading.json'
 
+// component for loading animation
 export default function Loading() {
     const defaultOptions = {
         loop: true,

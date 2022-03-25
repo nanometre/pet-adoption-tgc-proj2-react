@@ -1,5 +1,5 @@
 import React from 'react';
-import { addAnimalSchema } from '../validations'
+import { addAnimalSchema } from '../../validations'
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 
@@ -15,7 +15,6 @@ export default function AddAnimalForm(props) {
         <div className='container-fluid d-flex flex-column align-items-center'>
             <h3>Add Animal</h3>
             <div style={{ width: "60%" }}>
-                {/* props.addNewAnimal is where the post request is */}
                 <form onSubmit={handleSubmit(submitForm)}>
                     <h5>Animal's Details</h5>
                     <div>
@@ -85,9 +84,9 @@ export default function AddAnimalForm(props) {
                             <input className="form-check-input"
                                 type="checkbox"
                                 name="newStatusTags"
-                                value="H"
+                                value="HDB Approved"
                                 onChange={props.updateCheckbox}
-                                checked={props.newStatusTags.includes("H")}
+                                checked={props.newStatusTags.includes("HDB Approved")}
                                 id="hdb-approved" />
                             <label className="form-check-label" htmlFor="hdb-approved">HDB Approved</label>
                         </div>
@@ -95,9 +94,9 @@ export default function AddAnimalForm(props) {
                             <input className="form-check-input"
                                 type="checkbox"
                                 name="newStatusTags"
-                                value="M"
+                                value="Microchipped"
                                 onChange={props.updateCheckbox}
-                                checked={props.newStatusTags.includes("M")}
+                                checked={props.newStatusTags.includes("Microchipped")}
                                 id="microchipped" />
                             <label className="form-check-label" htmlFor="microchipped">Microchipped</label>
                         </div>
@@ -105,9 +104,9 @@ export default function AddAnimalForm(props) {
                             <input className="form-check-input"
                                 type="checkbox"
                                 name="newStatusTags"
-                                value="S"
+                                value="Sterilised"
                                 onChange={props.updateCheckbox}
-                                checked={props.newStatusTags.includes("S")}
+                                checked={props.newStatusTags.includes("Sterilised")}
                                 id="sterilised" />
                             <label className="form-check-label" htmlFor="sterilised">Sterilised</label>
                         </div>
@@ -115,9 +114,9 @@ export default function AddAnimalForm(props) {
                             <input className="form-check-input"
                                 type="checkbox"
                                 name="newStatusTags"
-                                value="V"
+                                value="Vaccinated"
                                 onChange={props.updateCheckbox}
-                                checked={props.newStatusTags.includes("V")}
+                                checked={props.newStatusTags.includes("Vaccinated")}
                                 id="vaccinated" />
                             <label className="form-check-label" htmlFor="vaccinated">Vaccinated</label>
                         </div>
