@@ -28,3 +28,9 @@ export const addAnimalSchema = yup.object().shape({
         .email("Email is not a valid email address")
         .required("Caretaker email is required"),
 })
+
+export const manageListingSchema = yup.object().shape({
+    manageListingEmail: yup.string()
+        .email("Email is not a valid email address")
+        .required("Email is required"),
+})

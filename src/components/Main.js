@@ -45,7 +45,8 @@ class Main extends React.Component {
         } else if (this.state.active === 'adoptionProcess') {
             return <AdoptionProcess />
         } else if (this.state.active === 'manageAnimals') {
-            return <ManageAnimals />
+            return <ManageAnimals BASE_API_URL={this.BASE_API_URL}
+                                  setActive={this.setActive}/>
         }
     }
 
@@ -60,7 +61,7 @@ class Main extends React.Component {
     processAddNewAnimal = (newAnimal) => {
         this.setState({
             animals: [...this.state.animals, newAnimal],
-            active: "home"
+            active: "browse"
         })
     }
 

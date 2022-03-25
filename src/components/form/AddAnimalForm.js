@@ -2,6 +2,7 @@ import React from 'react';
 import { addAnimalSchema } from '../../validations'
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
+import '../../assets/styles/form/form.css'
 
 export default function AddAnimalForm(props) {
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -24,7 +25,7 @@ export default function AddAnimalForm(props) {
                             name="newName"
                             value={props.newName}
                             {...register("newName", { onChange: props.updateFormField })} />
-                        <p> {errors.newName?.message} </p>
+                        <p className="form-error-message"> {errors.newName?.message} </p>
                     </div>
                     <div>
                         <div>
@@ -50,7 +51,7 @@ export default function AddAnimalForm(props) {
                             value={props.newBreed}
                             {...register("newBreed", { onChange: props.updateFormField })}
                         />
-                        <p> {errors.newBreed?.message} </p>
+                        <p className="form-error-message"> {errors.newBreed?.message} </p>
                     </div>
                     <div>
                         <div>
@@ -74,7 +75,7 @@ export default function AddAnimalForm(props) {
                             value={props.newDateOfBirth}
                             placeholder="YYYY-MM-DD"
                             {...register("newDateOfBirth", { onChange: props.updateFormField })} />
-                        <p> {errors.newDateOfBirth?.message} </p>
+                        <p className="form-error-message"> {errors.newDateOfBirth?.message} </p>
                     </div>
                     <div>
                         <div>
@@ -145,7 +146,7 @@ export default function AddAnimalForm(props) {
                                 {...register("newAdoptFoster", { onChange: props.updateCheckbox })} />
                             <label className="form-check-label" htmlFor="foster">Foster</label>
                         </div>
-                        <p> {errors.newAdoptFoster?.message} </p>
+                        <p className="form-error-message"> {errors.newAdoptFoster?.message} </p>
                     </div>
                     <div>
                         <label>Description</label>
@@ -155,7 +156,7 @@ export default function AddAnimalForm(props) {
                             placeholder="Write a short description on the animal"
                             rows="5"
                             {...register("newDescription", { onChange: props.updateFormField })}></textarea>
-                        <p> {errors.newDescription?.message} </p>
+                        <p className="form-error-message"> {errors.newDescription?.message} </p>
                     </div>
                     <div>
                         <label>Image URL of Animal</label>
@@ -164,7 +165,7 @@ export default function AddAnimalForm(props) {
                             name="newImgUrl"
                             value={props.newImgUrl}
                             {...register("newImgUrl", { onChange: props.updateFormField })} />
-                        <p> {errors.newImgUrl?.message} </p>
+                        <p className="form-error-message"> {errors.newImgUrl?.message} </p>
                     </div>
                     <h5>Current Caretaker's Details</h5>
                     <div>
@@ -176,7 +177,7 @@ export default function AddAnimalForm(props) {
                             placeholder="Name of individual or organisation"
                             {...register("newCaretakerName", { onChange: props.updateFormField })}
                         />
-                        <p> {errors.newCaretakerName?.message} </p>
+                        <p className="form-error-message"> {errors.newCaretakerName?.message} </p>
                     </div>
                     <div>
                         <label>Email</label>
@@ -185,10 +186,10 @@ export default function AddAnimalForm(props) {
                             name="newCaretakerEmail"
                             value={props.newCaretakerEmail}
                             {...register("newCaretakerEmail", { onChange: props.updateFormField })} />
-                        <p> {errors.newCaretakerEmail?.message} </p>
+                        <p className="form-error-message"> {errors.newCaretakerEmail?.message} </p>
                     </div>
                     <button className="btn btn-secondary"
-                        onClick={() => props.setActive('home')}>Cancel</button>
+                        onClick={() => props.setActive('browse')}>Cancel</button>
                     <button className="btn btn-primary"
                         type="submit"
                     >Submit</button>

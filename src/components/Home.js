@@ -11,6 +11,7 @@ export default function Home(props) {
             <div className="container-fluid">
                 <h3>Adopt an animal today and save a life!</h3>
                 <Carousel />
+                <h3>Meet some of our fur friends</h3>
                 <div className="d-flex flex-wrap justify-content-around">
                     {shuffledSlicedArr.map((animal, i) => {
                         return (
