@@ -1,41 +1,30 @@
 import * as yup from 'yup'
 
 export const addAnimalSchema = yup.object().shape({
-    name: yup.string()
-        .required(),
-    img_url: yup.string()
-        .url()
-        .required(),
-    gender: yup.string()
-        .matches(/^(?:Male|Female)$/,
-            "gender must be Male or Female")
-        .required(),
-    date_of_birth: yup.string()
+    newName: yup.string()
+        .required("Name is required")
+        .typeError("Name must be in alphabets"),
+    newImgUrl: yup.string()
+        .url("Image URL is not a valid URL")
+        .required("Image URL of animal is required"),
+    newDateOfBirth: yup.string()
         .matches(/^\d{4}-([0]\d|1[0-2])-([0-2]\d|3[01])$/,
-            "date_of_birth is not valid ISO datetime")
-        .required("date_of_birth is required"),
-    species: yup.object({
-        species_name: yup.string()
-            .required("species_name is required")
-            .typeError("species_name must be a string"),
-        breed: yup.string()
-            .required("breed is required")
-            .typeError("breed must be a string"),
-    }),
-    description: yup.string()
-        .required("description is required")
-        .typeError("description must be a string"),
-    status_tags: yup.array().of(yup.string().typeError("status_tags must be a string")),
-    adopt_foster: yup.array().of(yup.string()
-        .required("adopt_foster is required")
-        .typeError("adopt_foster must be a string")
-    ),
-    current_caretaker: yup.object({
-        caretaker_name: yup.string()
-            .required("caretaker_name is required")
-            .typeError("caretaker_name must be a string"),
-        email: yup.string()
-            .email("current_caretaker email is not valid")
-            .required("current_caretaker email is required"),
-    })
+            "Date of birth must be in YYYY-MM-DD format")
+        .required("Date of birth is required"),
+    newBreed: yup.string()
+        .required("Breed is required")
+        .typeError("Breed must be in alphabets"),
+    newDescription: yup.string()
+        .required("Description is required")
+        .typeError("Description must be in alphabets"),
+    newAdoptFoster: yup.array()
+        .min(1, "At least one have to be selected")
+        .required("At least one have to be selected")
+        .typeError("At least one have to be selected"),
+    newCaretakerName: yup.string()
+        .required("Caretaker name is required")
+        .typeError("Caretaker name must be in alphabets"),
+    newCaretakerEmail: yup.string()
+        .email("Email is not a valid email address")
+        .required("Caretaker email is required"),
 })
