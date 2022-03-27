@@ -17,11 +17,6 @@ export default class AddAnimal extends React.Component {
         newCaretakerEmail: "",
     }
 
-    // function to change active page
-    setActive = (page) => {
-        this.props.setActive(page)
-    }
-
     // function for form fields 2 way binding
     updateFormField = (evt) => {
         this.setState({
@@ -74,7 +69,7 @@ export default class AddAnimal extends React.Component {
                 <AddAnimalForm updateFormField={this.updateFormField}
                     updateCheckbox={this.updateCheckbox}
                     addNewAnimal={this.addNewAnimal}
-                    setActive={this.setActive}
+                    setActive={this.props.setActive}
                     newName={this.state.newName}
                     newImgUrl={this.state.newImgUrl}
                     newGender={this.state.newGender}

@@ -51,7 +51,8 @@ class Main extends React.Component {
         } else if (this.state.active === 'manageAnimals') {
             return <ManageAnimals BASE_API_URL={this.BASE_API_URL}
                                   animals={this.state.animals}
-                                  setActive={this.setActive}/>
+                                  setActive={this.setActive}
+                                  processDeleteAnimal={this.processDeleteAnimal}/>
         }
     }
 
@@ -62,11 +63,20 @@ class Main extends React.Component {
         })
     }
 
-    // function to add newly added animal to state
-    processAddNewAnimal = (newAnimal) => {
+    // function to add animal listing to main state
+    processAddNewAnimal = async (newAnimal) => {
+        let response = await axios.get(this.BASE_API_URL)
         this.setState({
-            animals: [...this.state.animals, newAnimal],
+            animals: response.data,
             active: "browse"
+        })
+    }
+
+    // function to delete animal listing from main state
+    processDeleteAnimal = (deleteAnimalId) => {
+        let updatedAnimals = this.state.animals.filter(l => l._id !== deleteAnimalId)
+        this.setState({
+            animals: updatedAnimals
         })
     }
 

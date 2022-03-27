@@ -10,21 +10,26 @@ export default function ManageUserListings(props) {
                     <p>Add an animal listing using this email or go back to the previous page.</p>
                     <button className="btn btn-primary"
                         onClick={() => props.setActive('addAnimal')}>
-                            Add animal</button>
+                        Add animal</button>
                     <button className="btn btn-secondary"
                         onClick={() => props.setLoaded()}>
-                            Back</button>
+                        Back</button>
                 </div>)
         } else {
             return (
-                <div className="d-flex flex-wrap justify-content-around">
-                    {props.userListings.map((animal, i) => {
-                        return (
-                            <React.Fragment key={i}>
-                                <ManageAnimalCard animal={animal} i={i}
-                                                   setActive={props.setActive} />
-                            </React.Fragment>)
-                    })}
+                <div>
+                    <p>Showing listing(s) for '{props.userEmail}'.</p>
+                    <div className="accordion" id="accordionManage">
+                        {props.userListings.map((animal, i) => {
+                            return (
+                                <React.Fragment key={i}>
+                                    <ManageAnimalCard i={i}
+                                        animal={animal}
+                                        setActive={props.setActive}
+                                        deleteAnimal={props.deleteAnimal} />
+                                </React.Fragment>)
+                        })}
+                    </div>
                 </div>
             )
         }
