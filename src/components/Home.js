@@ -16,10 +16,13 @@ export default function Home(props) {
                     {shuffledSlicedArr.map((animal, i) => {
                         return (
                             <React.Fragment key={i}>
-                                <DisplayAnimalCard animal={animal} i={i} />
+                                <DisplayAnimalCard animal={animal} i={i}
+                                                   setActive={props.setActive} />
                             </React.Fragment>)
                     })}
                 </div>
+                <button className="btn btn-primary"
+                            onClick={()=>props.setActive('browse')}>Browse more animals here!</button>
             </div>
         </React.Fragment>
     )

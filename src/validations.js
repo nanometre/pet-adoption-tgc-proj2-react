@@ -30,7 +30,7 @@ export const addAnimalSchema = yup.object().shape({
 })
 
 export const manageListingSchema = yup.object().shape({
-    manageListingEmail: yup.string()
+    userEmail: yup.string()
         .email("Email is not a valid email address")
         .required("Email is required"),
 })

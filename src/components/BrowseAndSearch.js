@@ -10,7 +10,8 @@ export default function BrowseAndSearch(props) {
                     {props.animals.map((animal, i) => {
                         return (
                             <React.Fragment key={i}>
-                                <DisplayAnimalCard animal={animal} i={i} />
+                                <DisplayAnimalCard animal={animal} i={i}
+                                                   setActive={props.setActive} />
                             </React.Fragment>)
                     })}
                 </div>

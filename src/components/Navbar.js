@@ -16,11 +16,6 @@ export default function Navbar(props) {
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <button className="nav-link active btn"
-                                onClick={() => props.setActive("home")}
-                            >Home</button>
-                        </li>
-                        <li className="nav-item">
-                            <button className="nav-link active btn"
                                 onClick={() => props.setActive("browse")}
                             >Browse</button>
                         </li>
@@ -32,7 +27,7 @@ export default function Navbar(props) {
                         <li className="nav-item">
                             <button className="nav-link active btn"
                                 onClick={() => props.setActive("manageAnimals")}
-                            >Manage Listings</button>
+                            >Manage</button>
                         </li>
                         <li className="nav-item">
                             <button className="nav-link active btn"

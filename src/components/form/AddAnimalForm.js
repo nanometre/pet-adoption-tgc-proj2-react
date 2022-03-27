@@ -14,7 +14,7 @@ export default function AddAnimalForm(props) {
 
     return (
         <div className='container-fluid d-flex flex-column align-items-center'>
-            <h3>Add Animal</h3>
+            <h3>Add an animal for adoption or fostering!</h3>
             <div style={{ width: "60%" }}>
                 <form onSubmit={handleSubmit(submitForm)}>
                     <h5>Animal's Details</h5>
@@ -188,11 +188,11 @@ export default function AddAnimalForm(props) {
                             {...register("newCaretakerEmail", { onChange: props.updateFormField })} />
                         <p className="form-error-message"> {errors.newCaretakerEmail?.message} </p>
                     </div>
-                    <button className="btn btn-secondary"
-                        onClick={() => props.setActive('browse')}>Cancel</button>
                     <button className="btn btn-primary"
                         type="submit"
                     >Submit</button>
+                    <button className="btn btn-secondary"
+                        onClick={() => props.setActive('browse')}>Cancel</button>
                 </form>
             </div>
         </div>

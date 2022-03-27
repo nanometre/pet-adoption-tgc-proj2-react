@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function DisplayAnimalCard(props) {
+export default function ManageAnimalCard(props) {
     return (
             <div className="card" style={{ width: '18rem' }}>
                 <img className="card-img-top" src={props.animal.img_url} alt={props.animal.name} />

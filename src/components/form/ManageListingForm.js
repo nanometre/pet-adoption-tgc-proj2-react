@@ -1,15 +1,17 @@
 import React from 'react';
 import { manageListingSchema } from '../../validations';
-import { useForm } from "react-hook-form"
-import { yupResolver } from "@hookform/resolvers/yup"
-import '../../assets/styles/form/form.css'
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import '../../assets/styles/form/form.css';
 
 export default function ManageListingForm(props) {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(manageListingSchema)
     })
     const submitForm = (data) => {
-        console.log(data)
+        let userListings = props.animals.filter(a => 
+            a.current_caretaker.email.toLowerCase() === props.userEmail.toLowerCase())
+        props.storeUserListings(userListings)
     }
 
     return (
@@ -21,16 +23,16 @@ export default function ManageListingForm(props) {
                         <label>Email</label>
                         <input className="form-control"
                             type="text"
-                            name="manageListingEmail"
-                            value={props.manageListingEmail}
-                            {...register("manageListingEmail", { onChange: props.updateFormField })} />
-                        <p className="form-error-message"> {errors.manageListingEmail?.message} </p>
+                            name="userEmail"
+                            value={props.userEmail}
+                            {...register("userEmail", { onChange: props.updateFormField })} />
+                        <p className="form-error-message"> {errors.userEmail?.message} </p>
                     </div>
-                    <button className="btn btn-secondary"
-                        onClick={() => props.setActive('browse')}>Cancel</button>
                     <button className="btn btn-primary"
                         type="submit"
                     >Submit</button>
+                    <button className="btn btn-secondary"
+                        onClick={() => props.setActive('browse')}>Cancel</button>
                 </form>
             </div>
         </div>

@@ -19,6 +19,10 @@ class Main extends React.Component {
         active: 'home'
     }
 
+    componentDidUpdate() {
+        window.scrollTo(0, 0)
+    }
+
     async componentDidMount() {
         let response = await axios.get(this.BASE_API_URL)
         document.title = "Paw Pals"
@@ -46,6 +50,7 @@ class Main extends React.Component {
             return <AdoptionProcess />
         } else if (this.state.active === 'manageAnimals') {
             return <ManageAnimals BASE_API_URL={this.BASE_API_URL}
+                                  animals={this.state.animals}
                                   setActive={this.setActive}/>
         }
     }
