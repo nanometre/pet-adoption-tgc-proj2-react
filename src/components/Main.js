@@ -73,10 +73,10 @@ class Main extends React.Component {
     }
 
     // function to delete animal listing from main state
-    processDeleteAnimal = (deleteAnimalId) => {
-        let updatedAnimals = this.state.animals.filter(l => l._id !== deleteAnimalId)
+    processDeleteAnimal = async (deleteAnimalId) => {
+        let response = await axios.get(this.BASE_API_URL)
         this.setState({
-            animals: updatedAnimals
+            animals: response.data
         })
     }
 
