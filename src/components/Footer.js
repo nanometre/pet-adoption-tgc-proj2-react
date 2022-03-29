@@ -1,53 +1,42 @@
 import React from 'react';
-import Email from '../assets/images/email.png';
-import LinkedIn from '../assets/images/linkedin.png';
-import Github from '../assets/images/github.png';
+import EmailIcon from '@mui/icons-material/Email';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import IconButton from '@mui/material/IconButton';
 import { openInNewTab } from '../utils';
 
 
 export default function Footer() {
     return (
         <React.Fragment>
-            <footer className="text-center text-white" style={{ backgroundColor: "#f1f1f1" }}>
+            <footer className="text-center text-white" style={{ backgroundColor: "#1976d2" }}>
                 {/* <!-- Grid container --> */}
                 <div className="container pt-4">
                     {/* <!-- Section: Social media --> */}
                     <section className="mb-4">
                         {/* <!-- Linkedin --> */}
-                        <img
-                            style={{margin: "0px 10px"}}
-                            src={LinkedIn}
-                            role="button"
-                            onClick={()=>openInNewTab("https://www.linkedin.com/in/benedictwcy/")}
-                            alt="LinkedIn Logo"
-                        />
+                        <IconButton onClick={() => openInNewTab("https://www.linkedin.com/in/benedictwcy/")}>
+                            <LinkedInIcon style={{color: 'white'}} />
+                        </IconButton>
                         {/* <!-- Github --> */}
-                        <img
-                            style={{margin: "0px 10px"}}
-                            src={Github}
-                            role="button"
-                            onClick={()=>openInNewTab("https://github.com/nanometre")}
-                            alt="Github Logo"
-                        />
+                        <IconButton onClick={() => openInNewTab("https://github.com/nanometre")}>
+                            <GitHubIcon style={{color: 'white'}} />
+                        </IconButton>
                         {/* <!-- Email --> */}
-                        <img
-                            style={{margin: "0px 10px"}}
-                            src={Email}
-                            role="button"
-                            onClick={()=>openInNewTab("mailto:benedictwcy@hotmail.com")}
-                            alt="Email Logo"
-                        />
+                        <IconButton onClick={() => openInNewTab("mailto:benedictwcy@hotmail.com")}>
+                            <EmailIcon style={{color: 'white'}} />
+                        </IconButton>
                     </section>
                     {/* <!-- Section: Social media --> */}
                 </div>
                 {/* <!-- Grid container --> */}
 
                 {/* <!-- Copyright --> */}
-                <div className="text-center text-dark p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                <div className="text-center text-light p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
                     © {new Date().getFullYear()} nanometre. All rights reserved.
                 </div>
                 {/* <!-- Copyright --> */}
             </footer>
-        </React.Fragment>
+        </React.Fragment >
     )
 }

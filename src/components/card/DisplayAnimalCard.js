@@ -26,7 +26,7 @@ export default function DisplayAnimalCard(props) {
                                         <p>Species: {props.animal.species.species_name}</p>
                                         <p>Breed: {props.animal.species.breed}</p>
                                         <p>Gender: {props.animal.gender}</p>
-                                        <p>Date of Birth: {props.animal.date_of_birth}</p>
+                                        <p>Date of Birth: {props.animal.date_of_birth.slice(0, 10)}</p>
                                         <p>Status Tags: {props.animal.status_tags.map(t => <li key={t}>{t}</li>)}</p>
                                         <p>Available for: {props.animal.adopt_foster.map(af => <li key={af}>{af}</li>)}</p>
                                         <p>Caretaker: {props.animal.current_caretaker.caretaker_name}</p>
