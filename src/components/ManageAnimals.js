@@ -11,7 +11,7 @@ export default class ManageAnimals extends React.Component {
     }
 
     // function to go back to re enter email
-    setLoaded = () => {
+    reenterEmail = () => {
         this.setState({
             loaded: false,
             userEmail: ""
@@ -25,6 +25,7 @@ export default class ManageAnimals extends React.Component {
         })
     }
 
+    // function to store listings of a specific user
     storeUserListings = (listings) => {
         this.setState({
             userListings: listings,
@@ -32,6 +33,7 @@ export default class ManageAnimals extends React.Component {
         })
     }
 
+    // function to delete animal listing 
     deleteAnimal = async (deleteAnimalId) => {
         await axios.delete(this.props.BASE_API_URL + "/" + deleteAnimalId)
         let updatedUserListings = this.state.userListings.filter(l => l._id !== deleteAnimalId)
@@ -49,12 +51,13 @@ export default class ManageAnimals extends React.Component {
                     {this.state.loaded ?
                         <ManageUserListings BASE_API_URL={this.props.BASE_API_URL}
                             setActive={this.props.setActive}
-                            setLoaded={this.setLoaded}
+                            reenterEmail={this.reenterEmail}
                             deleteAnimal={this.deleteAnimal}
                             userListings={this.state.userListings}
                             userEmail={this.state.userEmail} />
                         :
-                        <ManageListingForm animals={this.props.animals}
+                        <ManageListingForm BASE_API_URL={this.props.BASE_API_URL}
+                            animals={this.props.animals}
                             updateFormField={this.updateFormField}
                             setActive={this.props.setActive}
                             storeUserListings={this.storeUserListings}

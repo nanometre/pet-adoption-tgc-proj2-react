@@ -12,7 +12,7 @@ export default function ManageUserListings(props) {
                         onClick={() => props.setActive('addAnimal')}>
                         Add animal</button>
                     <button className="btn btn-secondary"
-                        onClick={() => props.setLoaded()}>
+                        onClick={() => props.reenterEmail()}>
                         Back</button>
                 </div>)
         } else {
@@ -30,6 +30,8 @@ export default function ManageUserListings(props) {
                                 </React.Fragment>)
                         })}
                     </div>
+                    <button className="btn btn-secondary"
+                        onClick={() => props.reenterEmail()}>Back</button>
                 </div>
             )
         }

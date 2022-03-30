@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { manageListingSchema } from '../../validations';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -8,10 +9,9 @@ export default function ManageListingForm(props) {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(manageListingSchema)
     })
-    const submitForm = (data) => {
-        let userListings = props.animals.filter(a => 
-            a.current_caretaker.email.toLowerCase() === props.userEmail.toLowerCase())
-        props.storeUserListings(userListings)
+    const submitForm = async (data) => {
+        let response = await axios.post(props.BASE_API_URL + "/user_listings", {email: props.userEmail})
+        props.storeUserListings(response.data)
     }
 
     return (

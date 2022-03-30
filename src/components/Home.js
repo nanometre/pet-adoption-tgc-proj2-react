@@ -1,6 +1,6 @@
 import React from "react";
 import DisplayAnimalCard from "./card/DisplayAnimalCard";
-import Carousel from "./home/Carousel";
+// import Carousel from "./home/Carousel";
 import { shuffled } from "../utils";
 
 export default function Home(props) {
@@ -10,7 +10,8 @@ export default function Home(props) {
         <React.Fragment>
             <div className="container-fluid">
                 <h3>Adopt an animal today and save a life!</h3>
-                <Carousel />
+                {/* To remove carousel? Or replace with a static image */}
+                {/* <Carousel /> */}
                 <h3>Meet some of our fur friends</h3>
                 <div className="d-flex flex-wrap justify-content-around">
                     {shuffledSlicedArr.map((animal, i) => {

@@ -17,7 +17,9 @@ export default function AddAnimalForm(props) {
             <h3>Add an animal for adoption or fostering!</h3>
             <div style={{ width: "60%" }}>
                 <form onSubmit={handleSubmit(submitForm)}>
+                    {/* animal details */}
                     <h5>Animal's Details</h5>
+                    {/* animal name input */}
                     <div>
                         <label>Name</label>
                         <input className="form-control"
@@ -27,9 +29,10 @@ export default function AddAnimalForm(props) {
                             {...register("newName", { onChange: props.updateFormField })} />
                         <p className="form-error-message"> {errors.newName?.message} </p>
                     </div>
+                    {/* animal species input */}
                     <div>
                         <div>
-                            <label className="form-check-label" >Species</label>
+                            <label>Species</label>
                         </div>
                         <div>
                             <select className="form-select"
@@ -43,6 +46,7 @@ export default function AddAnimalForm(props) {
                             </select>
                         </div>
                     </div>
+                    {/* animal breed input */}
                     <div>
                         <label>Breed</label>
                         <input className="form-control"
@@ -53,9 +57,10 @@ export default function AddAnimalForm(props) {
                         />
                         <p className="form-error-message"> {errors.newBreed?.message} </p>
                     </div>
+                    {/* animal gender input */}
                     <div>
                         <div>
-                            <label className="form-check-label" >Gender</label>
+                            <label>Gender</label>
                         </div>
                         <div>
                             <select className="form-select"
@@ -67,6 +72,7 @@ export default function AddAnimalForm(props) {
                             </select>
                         </div>
                     </div>
+                    {/* animal date of birth input */}
                     <div>
                         <label>Date of Birth</label>
                         <input className="form-control"
@@ -77,6 +83,7 @@ export default function AddAnimalForm(props) {
                             {...register("newDateOfBirth", { onChange: props.updateFormField })} />
                         <p className="form-error-message"> {errors.newDateOfBirth?.message} </p>
                     </div>
+                    {/* animal status tag input */}
                     <div>
                         <div>
                             <label className="form-check-label" >Status Tags</label>
@@ -122,6 +129,7 @@ export default function AddAnimalForm(props) {
                             <label className="form-check-label" htmlFor="vaccinated">Vaccinated</label>
                         </div>
                     </div>
+                    {/* adopt and foster input */}
                     <div>
                         <div>
                             <label className="form-check-label" >Available for</label>
@@ -148,6 +156,7 @@ export default function AddAnimalForm(props) {
                         </div>
                         <p className="form-error-message"> {errors.newAdoptFoster?.message} </p>
                     </div>
+                    {/* description input */}
                     <div>
                         <label>Description</label>
                         <textarea className="form-control"
@@ -158,6 +167,7 @@ export default function AddAnimalForm(props) {
                             {...register("newDescription", { onChange: props.updateFormField })}></textarea>
                         <p className="form-error-message"> {errors.newDescription?.message} </p>
                     </div>
+                    {/* image url input */}
                     <div>
                         <label>Image URL of Animal</label>
                         <input className="form-control"
@@ -167,7 +177,9 @@ export default function AddAnimalForm(props) {
                             {...register("newImgUrl", { onChange: props.updateFormField })} />
                         <p className="form-error-message"> {errors.newImgUrl?.message} </p>
                     </div>
+                    {/* caretaker details */}
                     <h5>Current Caretaker's Details</h5>
+                    {/* caretaker name input */}
                     <div>
                         <label>Name</label>
                         <input className="form-control"
@@ -179,6 +191,7 @@ export default function AddAnimalForm(props) {
                         />
                         <p className="form-error-message"> {errors.newCaretakerName?.message} </p>
                     </div>
+                    {/* caretaker email input */}
                     <div>
                         <label>Email</label>
                         <input className="form-control"
@@ -188,6 +201,7 @@ export default function AddAnimalForm(props) {
                             {...register("newCaretakerEmail", { onChange: props.updateFormField })} />
                         <p className="form-error-message"> {errors.newCaretakerEmail?.message} </p>
                     </div>
+                    {/* submit and cancel buttons */}
                     <button className="btn btn-primary"
                         type="submit"
                     >Submit</button>

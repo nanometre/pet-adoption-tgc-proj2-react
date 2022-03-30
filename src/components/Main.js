@@ -40,7 +40,8 @@ class Main extends React.Component {
             return <Home animals={this.state.animals}
                          setActive={this.setActive} />
         } else if (this.state.active === 'browse') {
-            return <BrowseAndSearch animals={this.state.animals}
+            return <BrowseAndSearch BASE_API_URL={this.BASE_API_URL}
+                                    animals={this.state.animals}
                                     setActive={this.setActive}/>
         } else if (this.state.active === 'addAnimal') {
             return <AddAnimal BASE_API_URL={this.BASE_API_URL}
