@@ -7,7 +7,16 @@ export default class ManageAnimals extends React.Component {
     state = {
         loaded: false,
         userEmail: "",
-        userListings: []
+        userListings: [],
+        editName: "",
+        editSpecies: "",
+        editBreed: "",
+        editGender: "",
+        editDateOfBirth: "",
+        editStatusTags: [],
+        editAdoptFoster: [],
+        editDescription: "",
+        editImgUrl: ""
     }
 
     // function to go back to re enter email

@@ -34,3 +34,7 @@ export const manageListingSchema = yup.object().shape({
         .email("Email is not a valid email address")
         .required("Email is required"),
 })
+
+export const editListingSchema = yup.object().shape({
+    
+})

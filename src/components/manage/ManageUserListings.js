@@ -6,7 +6,7 @@ export default function ManageUserListings(props) {
         if (props.userListings.length === 0) {
             return (
                 <div>
-                    <p>No animal listings for '{props.userEmail}'.</p>
+                    <p className='alert alert-danger'>No animal listings for '{props.userEmail}'.</p>
                     <p>Add an animal listing using this email or go back to the previous page.</p>
                     <button className="btn btn-primary"
                         onClick={() => props.setActive('addAnimal')}>

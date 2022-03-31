@@ -13,7 +13,7 @@ export default function DisplayAnimalCard(props) {
                     </button>
                     {/* Modal */}
                     <div className="modal fade" id={"staticBackdrop" + props.i} data-bs-backdrop="static" data-bs-keyboard="false">
-                        <div className="modal-dialog">
+                        <div className="modal-dialog modal-dialog-centered">
                             <div className="modal-content">
                                 <div className="modal-header">
                                     <h5 className="modal-title" id="staticBackdropLabel">{props.animal.name}</h5>

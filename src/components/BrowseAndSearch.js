@@ -73,7 +73,7 @@ export default class BrowseAndSearch extends React.Component {
             )
         } else {
             return (
-                <div>No results found</div>
+                <div className="alert alert-danger">No results found</div>
             )
         }
     }

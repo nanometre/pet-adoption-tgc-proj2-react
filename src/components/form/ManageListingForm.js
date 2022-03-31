@@ -10,7 +10,7 @@ export default function ManageListingForm(props) {
         resolver: yupResolver(manageListingSchema)
     })
     const submitForm = async (data) => {
-        let response = await axios.post(props.BASE_API_URL + "/user_listings", {email: props.userEmail})
+        let response = await axios.get(props.BASE_API_URL + "/user_listings", {params: {email: props.userEmail}})
         props.storeUserListings(response.data)
     }
 
