@@ -28,7 +28,8 @@ export default function ManageAnimalCard(props) {
                         <button type="button"
                             className="btn btn-primary"
                             data-bs-toggle="modal"
-                            data-bs-target={"#editModal" + props.i}>Edit</button>
+                            data-bs-target={"#editModal" + props.i}
+                            onClick={() => props.storeOriginalDetails(props.animal)}>Edit</button>
                         {/* edit modal */}
                         <div className="modal fade" id={"editModal" + props.i} data-bs-backdrop="static" data-bs-keyboard="false">
                             <div className="modal-dialog modal-dialog-centered">
@@ -41,15 +42,9 @@ export default function ManageAnimalCard(props) {
                                                 aria-label="Close"></button>
                                     </div>
                                     <div className="modal-body">
-                                        <EditListingForm animal={props.animal}/>
-                                    </div>
-                                    <div className="modal-footer">
-                                        <button type="button" 
-                                                className="btn btn-secondary" 
-                                                data-bs-dismiss="modal">Close</button>
-                                        <button type="button" 
-                                                className="btn btn-success" 
-                                                data-bs-dismiss="modal">Edit</button>
+                                        <EditListingForm editAnimalDetails={props.editAnimalDetails} 
+                                                         updateEditFormField={props.updateEditFormField}
+                                                         updateEditCheckbox={props.updateEditCheckbox}/>
                                     </div>
                                 </div>
                             </div>

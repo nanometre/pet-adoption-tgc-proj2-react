@@ -36,5 +36,24 @@ export const manageListingSchema = yup.object().shape({
 })
 
 export const editListingSchema = yup.object().shape({
-    
+    editName: yup.string()
+        .required("Name is required")
+        .typeError("Name must be in alphabets"),
+    editBreed: yup.string()
+        .required("Breed is required")
+        .typeError("Breed must be in alphabets"),
+    editDateOfBirth: yup.string()
+        .matches(/^\d{4}-([0]\d|1[0-2])-([0-2]\d|3[01])$/,
+            "Date of birth must be in YYYY-MM-DD format")
+        .required("Date of birth is required"),
+    editAdoptFoster: yup.array()
+        .min(1, "At least one have to be selected")
+        .required("At least one have to be selected")
+        .typeError("At least one have to be selected"),
+    editDescription: yup.string()
+        .required("Description is required")
+        .typeError("Description must be in alphabets"),
+    editImgUrl: yup.string()
+        .url("Image URL is not a valid URL")
+        .required("Image URL of animal is required")
 })

@@ -26,7 +26,11 @@ export default function ManageUserListings(props) {
                                     <ManageAnimalCard i={i}
                                         animal={animal}
                                         setActive={props.setActive}
-                                        deleteAnimal={props.deleteAnimal} />
+                                        deleteAnimal={props.deleteAnimal}
+                                        updateEditFormField={props.updateEditFormField}
+                                        updateEditCheckbox={props.updateEditCheckbox}
+                                        storeOriginalDetails={props.storeOriginalDetails}
+                                        editAnimalDetails={props.editAnimalDetails} />
                                 </React.Fragment>)
                         })}
                     </div>
