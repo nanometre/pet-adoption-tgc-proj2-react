@@ -14,7 +14,6 @@ export default function AddAnimalForm(props) {
 
     return (
         <div className='container-fluid d-flex flex-column align-items-center'>
-            <h3>Add an animal for adoption or fostering!</h3>
             <div style={{ width: "60%" }}>
                 <form onSubmit={handleSubmit(submitForm)}>
                     {/* animal details */}

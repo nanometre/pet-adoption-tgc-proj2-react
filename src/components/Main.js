@@ -53,7 +53,7 @@ class Main extends React.Component {
             return <ManageAnimals BASE_API_URL={this.BASE_API_URL}
                                   animals={this.state.animals}
                                   setActive={this.setActive}
-                                  processDeleteAnimal={this.processDeleteAnimal}/>
+                                  processDeleteEditAnimal={this.processDeleteEditAnimal}/>
         }
     }
 
@@ -74,7 +74,7 @@ class Main extends React.Component {
     }
 
     // function to delete animal listing from main state
-    processDeleteAnimal = async (deleteAnimalId) => {
+    processDeleteEditAnimal = async (deleteAnimalId) => {
         let response = await axios.get(this.BASE_API_URL)
         this.setState({
             animals: response.data

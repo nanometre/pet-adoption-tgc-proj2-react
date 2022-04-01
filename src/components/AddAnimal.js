@@ -66,6 +66,8 @@ export default class AddAnimal extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <div className='container-fluid'>
+                <h3>Add an animal for adoption or fostering!</h3>
                 <AddAnimalForm updateFormField={this.updateFormField}
                     updateCheckbox={this.updateCheckbox}
                     addNewAnimal={this.addNewAnimal}
@@ -82,6 +84,7 @@ export default class AddAnimal extends React.Component {
                     newCaretakerName={this.state.newCaretakerName}
                     newCaretakerEmail={this.state.newCaretakerEmail}
                 />
+                </div>
             </React.Fragment>
         )
     }

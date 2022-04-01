@@ -44,7 +44,10 @@ export default function ManageAnimalCard(props) {
                                     <div className="modal-body">
                                         <EditListingForm editAnimalDetails={props.editAnimalDetails} 
                                                          updateEditFormField={props.updateEditFormField}
-                                                         updateEditCheckbox={props.updateEditCheckbox}/>
+                                                         updateEditCheckbox={props.updateEditCheckbox}
+                                                         editAnimal={props.editAnimal}
+                                                         editValid={props.editValid}
+                                                         editFormIsValid={props.editFormIsValid} />
                                     </div>
                                 </div>
                             </div>

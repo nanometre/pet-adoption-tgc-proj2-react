@@ -19,14 +19,16 @@ export default class ManageAnimals extends React.Component {
             editAdoptFoster: [],
             editDescription: "",
             editImgUrl: ""
-        }
+        },
+        editValid: false
     }
 
     // function to store listings of a specific user
-    storeUserListings = (listings) => {
+    storeUserListings = async () => {
+        let response = await axios.get(this.props.BASE_API_URL + "/user_listings", {params: {email: this.state.userEmail}})
         this.setState({
-            userListings: listings,
-            loaded: true
+            userListings: response.data,
+            loaded: true,
         })
     }
 
@@ -45,6 +47,7 @@ export default class ManageAnimals extends React.Component {
         })
     }
 
+    // function for form fields 2 way binding for edit animal form
     updateEditFormField = (evt) => {
         this.setState({
             editAnimalDetails: {
@@ -54,6 +57,7 @@ export default class ManageAnimals extends React.Component {
         })
     }
 
+    // function for checkbox 2 way binding for edit animal form
     updateEditCheckbox = (evt) => {
         let key = evt.target.name
         if (this.state.editAnimalDetails[key].includes(evt.target.value)) {
@@ -88,7 +92,8 @@ export default class ManageAnimals extends React.Component {
                 editAdoptFoster: animal.adopt_foster,
                 editDescription: animal.description,
                 editImgUrl: animal.img_url
-            }
+            },
+            editValid: false
         })
     }
 
@@ -99,7 +104,22 @@ export default class ManageAnimals extends React.Component {
         this.setState({
             userListings: updatedUserListings
         })
-        this.props.processDeleteAnimal(deleteAnimalId)
+        this.props.processDeleteEditAnimal(deleteAnimalId)
+    }
+
+    // function to edit/put animal listing
+    editAnimal = async (editedAnimalData) => {
+        await axios.patch(this.props.BASE_API_URL + "/" + this.state.editAnimalDetails.editId, editedAnimalData)
+        this.storeUserListings()
+        this.props.processDeleteEditAnimal()
+        // if success close the modal? modal dismissal. 
+    } 
+
+    // function to show that changes in edit form is valid
+    editFormIsValid= () => {
+        this.setState({
+            editValid: true
+        })
     }
 
     render() {
@@ -115,9 +135,12 @@ export default class ManageAnimals extends React.Component {
                             storeOriginalDetails={this.storeOriginalDetails}
                             reenterEmail={this.reenterEmail}
                             deleteAnimal={this.deleteAnimal}
+                            editAnimal={this.editAnimal}
                             userListings={this.state.userListings}
                             userEmail={this.state.userEmail}
-                            editAnimalDetails={this.state.editAnimalDetails} />
+                            editAnimalDetails={this.state.editAnimalDetails}
+                            editValid={this.state.editValid}
+                            editFormIsValid={this.editFormIsValid} />
                         :
                         <ManageListingForm BASE_API_URL={this.props.BASE_API_URL}
                             animals={this.props.animals}

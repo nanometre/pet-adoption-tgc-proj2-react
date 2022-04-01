@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { editListingSchema } from '../../validations';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup";
 import '../../assets/styles/form/form.css';
 
 export default function EditListingForm(props) {
-    const { register, handleSubmit, formState: { errors } } = useForm({
-        resolver: yupResolver(editListingSchema),
-        defaultValues: {
+    const { register, handleSubmit, formState: { errors }, reset } = useForm({
+        resolver: yupResolver(editListingSchema)
+    })
+
+    useEffect(() => {
+        let defaults = {
             editName: props.editAnimalDetails.editName,
             editSpecies: props.editAnimalDetails.editSpecies,
             editBreed: props.editAnimalDetails.editBreed,
@@ -18,9 +21,25 @@ export default function EditListingForm(props) {
             editDescription: props.editAnimalDetails.editDescription,
             editImgUrl: props.editAnimalDetails.editImgUrl
         }
-    })
-    const submitForm = (data) => {
-        console.log(data)
+        reset(defaults)
+    }, [props.editAnimalDetails, reset])
+
+    const submitForm = async (data) => {
+        let editedAnimalData = {
+            "name": data.editName,
+            "img_url": data.editImgUrl, 
+            "gender": data.editGender, 
+            "date_of_birth": data.editDateOfBirth, 
+            "species": {
+                "species_name": data.editSpecies,
+                "breed": data.editBreed
+            }, 
+            "status_tags": data.editStatusTags,
+            "description": data.editDescription, 
+            "adopt_foster": data.editAdoptFoster
+        }
+        await props.editAnimal(editedAnimalData)
+        props.editFormIsValid()
     }
 
     return (
@@ -189,13 +208,13 @@ export default function EditListingForm(props) {
                 />
                 <p className="form-error-message"> {errors.editImgUrl?.message} </p>
             </div>
+            {props.editValid ? <div className='alert alert-success'>Change(s) successful saved. You may close this window.</div> : null }
             <button type="button"
                 className="btn btn-secondary"
                 data-bs-dismiss="modal">Close</button>
             <button type="submit"
                 className="btn btn-success"
-            // data-bs-dismiss="modal"
-            >Edit</button>
+            >Save changes</button>
         </form>
     )
 }

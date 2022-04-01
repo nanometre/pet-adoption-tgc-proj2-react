@@ -27,10 +27,13 @@ export default function ManageUserListings(props) {
                                         animal={animal}
                                         setActive={props.setActive}
                                         deleteAnimal={props.deleteAnimal}
+                                        editAnimal={props.editAnimal}
                                         updateEditFormField={props.updateEditFormField}
                                         updateEditCheckbox={props.updateEditCheckbox}
                                         storeOriginalDetails={props.storeOriginalDetails}
-                                        editAnimalDetails={props.editAnimalDetails} />
+                                        editAnimalDetails={props.editAnimalDetails}
+                                        editValid={props.editValid}
+                                        editFormIsValid={props.editFormIsValid} />
                                 </React.Fragment>)
                         })}
                     </div>
