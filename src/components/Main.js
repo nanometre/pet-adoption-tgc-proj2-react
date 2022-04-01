@@ -8,6 +8,7 @@ import BrowseAndSearch from "./BrowseAndSearch";
 import AddAnimal from "./AddAnimal";
 import AdoptionProcess from "./AdoptionProcess";
 import ManageAnimals from "./ManageAnimals";
+import '../assets/styles/page/main.css'
 
 
 class Main extends React.Component {
@@ -38,22 +39,22 @@ class Main extends React.Component {
             return <Loading />
         } else if (this.state.active === 'home') {
             return <Home animals={this.state.animals}
-                         setActive={this.setActive} />
+                setActive={this.setActive} />
         } else if (this.state.active === 'browse') {
             return <BrowseAndSearch BASE_API_URL={this.BASE_API_URL}
-                                    animals={this.state.animals}
-                                    setActive={this.setActive}/>
+                animals={this.state.animals}
+                setActive={this.setActive} />
         } else if (this.state.active === 'addAnimal') {
             return <AddAnimal BASE_API_URL={this.BASE_API_URL}
-                              setActive={this.setActive}
-                              processAddNewAnimal={this.processAddNewAnimal}/>
+                setActive={this.setActive}
+                processAddNewAnimal={this.processAddNewAnimal} />
         } else if (this.state.active === 'adoptionProcess') {
             return <AdoptionProcess />
         } else if (this.state.active === 'manageAnimals') {
             return <ManageAnimals BASE_API_URL={this.BASE_API_URL}
-                                  animals={this.state.animals}
-                                  setActive={this.setActive}
-                                  processDeleteEditAnimal={this.processDeleteEditAnimal}/>
+                animals={this.state.animals}
+                setActive={this.setActive}
+                processDeleteEditAnimal={this.processDeleteEditAnimal} />
         }
     }
 
@@ -84,9 +85,17 @@ class Main extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Navbar setActive={this.setActive}/>
-                {this.renderPage()}
-                <Footer />
+                <div id='page'>
+                    <div id='nav'>
+                        <Navbar setActive={this.setActive} />
+                    </div>
+                    <div id='content'>
+                        {this.renderPage()}
+                    </div>
+                    <div id='footer'>
+                        <Footer />
+                    </div>
+                </div>
             </React.Fragment>)
 
     }

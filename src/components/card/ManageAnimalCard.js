@@ -36,18 +36,18 @@ export default function ManageAnimalCard(props) {
                                 <div className="modal-content">
                                     <div className="modal-header">
                                         <h5 className="modal-title" id="editModalLabel">Edit</h5>
-                                        <button type="button" 
-                                                className="btn-close" 
-                                                data-bs-dismiss="modal" 
-                                                aria-label="Close"></button>
+                                        <button type="button"
+                                            className="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
                                     </div>
                                     <div className="modal-body">
-                                        <EditListingForm editAnimalDetails={props.editAnimalDetails} 
-                                                         updateEditFormField={props.updateEditFormField}
-                                                         updateEditCheckbox={props.updateEditCheckbox}
-                                                         editAnimal={props.editAnimal}
-                                                         editValid={props.editValid}
-                                                         editFormIsValid={props.editFormIsValid} />
+                                        <EditListingForm editAnimalDetails={props.editAnimalDetails}
+                                            updateEditFormField={props.updateEditFormField}
+                                            updateEditCheckbox={props.updateEditCheckbox}
+                                            editAnimal={props.editAnimal}
+                                            editValid={props.editValid}
+                                            editFormIsValid={props.editFormIsValid} />
                                     </div>
                                 </div>
                             </div>
@@ -63,22 +63,23 @@ export default function ManageAnimalCard(props) {
                                 <div className="modal-content">
                                     <div className="modal-header">
                                         <h5 className="modal-title" id="deleteModalLabel">Delete</h5>
-                                        <button type="button" 
-                                                className="btn-close" 
-                                                data-bs-dismiss="modal" 
-                                                aria-label="Close"></button>
+                                        <button type="button"
+                                            className="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
                                     </div>
                                     <div className="modal-body">
                                         Are you sure you want to delete? This action is irreversible.
                                     </div>
                                     <div className="modal-footer">
-                                        <button type="button" 
-                                                className="btn btn-secondary" 
-                                                data-bs-dismiss="modal">Close</button>
-                                        <button type="button" 
-                                                className="btn btn-danger" 
-                                                data-bs-dismiss="modal" 
-                                                onClick={() => props.deleteAnimal(props.animal._id)}>Delete</button>
+                                        <button type="button"
+                                            className="btn btn-danger"
+                                            data-bs-dismiss="modal"
+                                            onClick={() => props.deleteAnimal(props.animal._id)}>Delete</button>
+                                        <button type="button"
+                                            className="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancel</button>
+
                                     </div>
                                 </div>
                             </div>

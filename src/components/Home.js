@@ -5,7 +5,7 @@ import { shuffled } from "../utils";
 
 export default function Home(props) {
     // get 4 random animal listings
-    let shuffledSlicedArr = shuffled(props.animals).slice(0, 4)
+    let shuffledSlicedArr = shuffled(props.animals).slice(0, 3)
     return (
         <React.Fragment>
             <div className="container-fluid">

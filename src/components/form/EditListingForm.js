@@ -27,15 +27,15 @@ export default function EditListingForm(props) {
     const submitForm = async (data) => {
         let editedAnimalData = {
             "name": data.editName,
-            "img_url": data.editImgUrl, 
-            "gender": data.editGender, 
-            "date_of_birth": data.editDateOfBirth, 
+            "img_url": data.editImgUrl,
+            "gender": data.editGender,
+            "date_of_birth": data.editDateOfBirth,
             "species": {
                 "species_name": data.editSpecies,
                 "breed": data.editBreed
-            }, 
+            },
             "status_tags": data.editStatusTags,
-            "description": data.editDescription, 
+            "description": data.editDescription,
             "adopt_foster": data.editAdoptFoster
         }
         await props.editAnimal(editedAnimalData)
@@ -208,13 +208,13 @@ export default function EditListingForm(props) {
                 />
                 <p className="form-error-message"> {errors.editImgUrl?.message} </p>
             </div>
-            {props.editValid ? <div className='alert alert-success'>Change(s) successful saved. You may close this window.</div> : null }
-            <button type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal">Close</button>
+            {props.editValid ? <div className='alert alert-success'>Change(s) successful saved. You may close this window.</div> : null}
             <button type="submit"
                 className="btn btn-success"
             >Save changes</button>
+            <button type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal">Cancel</button>
         </form>
     )
 }
