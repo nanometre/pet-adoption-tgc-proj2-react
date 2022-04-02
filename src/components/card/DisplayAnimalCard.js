@@ -1,5 +1,5 @@
 import React from "react";
-import '../../assets/styles/card/displayAnimalCard.css'
+import '../../assets/styles/card/display-animal-card.css'
 
 export default function DisplayAnimalCard(props) {
     return (
@@ -52,7 +52,7 @@ export default function DisplayAnimalCard(props) {
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <h5>Current Caretaker Details</h5>
+                                    <h5>Current Caretaker's Details</h5>
                                     <table className="table table-borderless">
                                         <tbody>
                                             <tr>

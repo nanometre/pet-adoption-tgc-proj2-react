@@ -14,7 +14,7 @@ export default function AddAnimalForm(props) {
 
     return (
         <div className='container-fluid d-flex flex-column align-items-center'>
-            <div style={{ width: "60%" }}>
+            <div className='customForm'>
                 <form onSubmit={handleSubmit(submitForm)}>
                     {/* animal details */}
                     <h5>Animal's Details</h5>
@@ -175,6 +175,7 @@ export default function AddAnimalForm(props) {
                             value={props.newImgUrl}
                             {...register("newImgUrl", { onChange: props.updateFormField })} />
                         <p className="form-error-message"> {errors.newImgUrl?.message} </p>
+                        {props.newImgUrl ? <img src={props.newImgUrl} alt="Rendered from URL" style={{width: '100%'}}/> : null}
                     </div>
                     {/* caretaker details */}
                     <h5>Current Caretaker's Details</h5>

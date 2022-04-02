@@ -15,7 +15,7 @@ export default function ManageListingForm(props) {
     return (
         <div className='container-fluid d-flex flex-column align-items-center'>
             <h5>Input your email to manage your animal listings</h5>
-            <div style={{ width: "60%" }}>
+            <div className='customForm'>
                 <form onSubmit={handleSubmit(submitForm)}>
                     <div>
                         <label>Email</label>

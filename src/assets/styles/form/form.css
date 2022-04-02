@@ -1,3 +1,13 @@
 .form-error-message {
     color: red;
 }
+
+.customForm {
+    width: 100%
+}
+
+@media screen and (min-width: 576px) {
+    .customForm {
+        width: 60%
+    }
+}

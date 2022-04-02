@@ -14,12 +14,14 @@ export default function Loading() {
     };
 
     return (
-        <React.Fragment>
-            <Lottie
-                options={defaultOptions}
-                height={400}
-                width={400}
-            />
-        </React.Fragment>
+        <div style={{ height: '100%', display: 'flex', alignItems: "center" , justifyContent: 'center', alignContent: 'center' }}>
+            <div>
+                <Lottie
+                    options={defaultOptions}
+                    height={400}
+                    width={400}
+                />
+            </div>
+        </div>
     )
 }

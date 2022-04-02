@@ -25,3 +25,9 @@
 .modal-img {
     width: 100%
 }
+
+@media screen and (max-width: 768px) {
+    .card, .card-img-top {
+        width: 15rem;
+    }
+}

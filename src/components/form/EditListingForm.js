@@ -206,6 +206,7 @@ export default function EditListingForm(props) {
                     value={props.editAnimalDetails.editImgUrl}
                     {...register("editImgUrl", { onChange: props.updateEditFormField })}
                 />
+                {props.editAnimalDetails.editImgUrl ? <img src={props.editAnimalDetails.editImgUrl} alt="Rendered from URL" style={{width: '100%'}}/> : null}
                 <p className="form-error-message"> {errors.editImgUrl?.message} </p>
             </div>
             {props.editValid ? <div className='alert alert-success'>Change(s) successful saved. You may close this window.</div> : null}

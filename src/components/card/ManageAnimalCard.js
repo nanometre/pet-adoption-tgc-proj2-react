@@ -11,19 +11,56 @@ export default function ManageAnimalCard(props) {
             </h2>
             <div id={"collapse" + props.i} className="accordion-collapse collapse" aria-labelledby={"heading" + props.i} data-bs-parent="#accordionManage">
                 <div className="accordion-body d-flex row">
-                    <div className="col-4">
+                    <div className="col-5">
                         <img src={props.animal.img_url} alt={props.animal.name} style={{ width: '100%' }} />
                     </div>
-                    <div className="col-8">
-                        <p>Description: {props.animal.description}</p>
-                        <p>Species: {props.animal.species.species_name}</p>
-                        <p>Breed: {props.animal.species.breed}</p>
-                        <p>Gender: {props.animal.gender}</p>
-                        <p>Date of Birth: {props.animal.date_of_birth.slice(0, 10)}</p>
-                        <p>Status Tags: {props.animal.status_tags.map(t => <li key={t}>{t}</li>)}</p>
-                        <p>Available for: {props.animal.adopt_foster.map(af => <li key={af}>{af}</li>)}</p>
-                        <p>Caretaker: {props.animal.current_caretaker.caretaker_name}</p>
-                        <p>Caretaker's Email: {props.animal.current_caretaker.email}</p>
+                    <div className="col-7">
+                        <h5>Animal's Details</h5>
+                        <table className="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td>Description</td>
+                                    <td>{props.animal.description}</td>
+                                </tr>
+                                <tr>
+                                    <td>Species</td>
+                                    <td>{props.animal.species.species_name}</td>
+                                </tr>
+                                <tr>
+                                    <td>Breed</td>
+                                    <td>{props.animal.species.breed}</td>
+                                </tr>
+                                <tr>
+                                    <td>Gender</td>
+                                    <td>{props.animal.gender}</td>
+                                </tr>
+                                <tr>
+                                    <td>Date of Birth</td>
+                                    <td>{props.animal.date_of_birth.slice(0, 10)}</td>
+                                </tr>
+                                <tr>
+                                    <td>Status Tags</td>
+                                    <td>{props.animal.status_tags.map(t => <span key={t}>{t}<br /></span>)}</td>
+                                </tr>
+                                <tr>
+                                    <td>Available for</td>
+                                    <td>{props.animal.adopt_foster.map(af => <span key={af}>{af}<br /></span>)}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h5>Current Caretaker's Details</h5>
+                        <table className="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>{props.animal.current_caretaker.caretaker_name}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>{props.animal.current_caretaker.email}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                         {/* button to trigger edit modal */}
                         <button type="button"
                             className="btn btn-primary"
