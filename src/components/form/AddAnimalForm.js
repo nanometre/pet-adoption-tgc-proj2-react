@@ -175,7 +175,9 @@ export default function AddAnimalForm(props) {
                             value={props.newImgUrl}
                             {...register("newImgUrl", { onChange: props.updateFormField })} />
                         <p className="form-error-message"> {errors.newImgUrl?.message} </p>
-                        {props.newImgUrl ? <img src={props.newImgUrl} alt="Rendered from URL" style={{width: '100%'}}/> : null}
+                        {props.newImgUrl ? <img src={props.newImgUrl} 
+                                                alt="Rendered from URL" 
+                                                className='ImgUrlRendered'/> : null}
                     </div>
                     {/* caretaker details */}
                     <h5>Current Caretaker's Details</h5>

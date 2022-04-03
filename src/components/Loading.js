@@ -14,14 +14,12 @@ export default function Loading() {
     };
 
     return (
-        <div style={{ height: '100%', display: 'flex', alignItems: "center" , justifyContent: 'center', alignContent: 'center' }}>
-            <div>
-                <Lottie
-                    options={defaultOptions}
-                    height={400}
-                    width={400}
-                />
-            </div>
+        <div style={{ margin: 'auto' }}>
+            <Lottie
+                options={defaultOptions}
+                height={'50%'}
+                width={'50%'}
+            />
         </div>
     )
 }

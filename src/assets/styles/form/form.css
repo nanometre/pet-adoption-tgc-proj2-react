@@ -6,6 +6,13 @@
     width: 100%
 }
 
+.ImgUrlRendered {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media screen and (min-width: 576px) {
     .customForm {
         width: 60%
