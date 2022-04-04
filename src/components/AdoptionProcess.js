@@ -1,8 +1,10 @@
 import React from 'react';
+import '../assets/styles/page/adoption-process.css'
 
 export default function AdoptionProcess() {
     return (
         <React.Fragment>
+            
             <div className='container-fluid'>
                 <h3>Adoption Process</h3>
                 <h5>Step 1</h5>

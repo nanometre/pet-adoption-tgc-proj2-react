@@ -58,7 +58,7 @@ export default class AddAnimal extends React.Component {
                 "email": this.state.newCaretakerEmail
             }
         }
-        await axios.post(this.props.BASE_API_URL, newAnimal)
+        await axios.post(this.props.ANIMALS_API_URL, newAnimal)
         this.props.processAddNewAnimal(newAnimal)
 
     }

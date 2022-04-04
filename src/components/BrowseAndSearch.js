@@ -20,8 +20,7 @@ export default class BrowseAndSearch extends React.Component {
         this.setState({
             [evt.target.name]: evt.target.value
         })
-        await setTimeout(function () { }, 1000)
-        await this.getSearchResults()
+        await setTimeout(() => {this.getSearchResults()}, 1000)
     }
 
     // function for checkboxes 2 way binding
@@ -37,13 +36,12 @@ export default class BrowseAndSearch extends React.Component {
                 [key]: [...this.state[key], evt.target.value]
             })
         }
-        await setTimeout(function () { }, 500)
-        await this.getSearchResults()
+        await setTimeout(() => {this.getSearchResults()}, 1000)
     }
 
     // function to get search results
     getSearchResults = async () => {
-        let response = await axios.post(this.props.BASE_API_URL + '/search', {
+        let response = await axios.post(this.props.ANIMALS_API_URL + '/search', {
             searchterm: this.state.searchInput,
             gender: this.state.searchGender,
             gteyear: this.state.searchAgeGte,
@@ -66,7 +64,12 @@ export default class BrowseAndSearch extends React.Component {
                             <React.Fragment key={i}>
                                 <DisplayAnimalCard i={i}
                                     animal={animal}
-                                    setActive={this.props.setActive} />
+                                    comments={this.props.comments}
+                                    setActive={this.props.setActive}
+                                    commentAnimalId={this.props.commentAnimalId}
+                                    commentName={this.props.commentName}
+                                    commentContent={this.props.commentContent}
+                                    commentRating={this.props.commentRating} />
                             </React.Fragment>)
                     })}
                 </div>

@@ -12,10 +12,16 @@ import '../assets/styles/page/main.css'
 
 
 class Main extends React.Component {
-    BASE_API_URL = 'https://pet-adoption-tgc-proj2-express.herokuapp.com/animals'
+    ANIMALS_API_URL = 'https://pet-adoption-tgc-proj2-express.herokuapp.com/animals'
+    COMMENTS_API_URL = 'https://pet-adoption-tgc-proj2-express.herokuapp.com/comments'
 
     state = {
         animals: [],
+        comments: [],
+        commentAnimalId: "",
+        commentName: "",
+        commentContent: "",
+        commentRating: 0,
         loaded: false,
         active: 'home'
     }
@@ -25,10 +31,12 @@ class Main extends React.Component {
     }
 
     async componentDidMount() {
-        let response = await axios.get(this.BASE_API_URL)
+        let animalResponse = await axios.get(this.ANIMALS_API_URL)
+        let commentResponse = await axios.get(this.COMMENTS_API_URL)
         document.title = "Paw Pals"
         this.setState({
-            animals: response.data,
+            animals: animalResponse.data,
+            comments: commentResponse.data,
             loaded: true
         })
     }
@@ -39,19 +47,29 @@ class Main extends React.Component {
             return <Loading />
         } else if (this.state.active === 'home') {
             return <Home animals={this.state.animals}
-                setActive={this.setActive} />
+                comments={this.state.comments}
+                setActive={this.setActive}
+                commentAnimalId={this.state.commentAnimalId}
+                commentName={this.state.commentName}
+                commentContent={this.state.commentContent}
+                commentRating={this.state.commentRating} />
         } else if (this.state.active === 'browse') {
-            return <BrowseAndSearch BASE_API_URL={this.BASE_API_URL}
+            return <BrowseAndSearch ANIMALS_API_URL={this.ANIMALS_API_URL}
                 animals={this.state.animals}
-                setActive={this.setActive} />
+                comments={this.state.comments}
+                setActive={this.setActive}
+                commentAnimalId={this.state.commentAnimalId}
+                commentName={this.state.commentName}
+                commentContent={this.state.commentContent}
+                commentRating={this.state.commentRating} />
         } else if (this.state.active === 'addAnimal') {
-            return <AddAnimal BASE_API_URL={this.BASE_API_URL}
+            return <AddAnimal ANIMALS_API_URL={this.ANIMALS_API_URL}
                 setActive={this.setActive}
                 processAddNewAnimal={this.processAddNewAnimal} />
         } else if (this.state.active === 'adoptionProcess') {
             return <AdoptionProcess />
         } else if (this.state.active === 'manageAnimals') {
-            return <ManageAnimals BASE_API_URL={this.BASE_API_URL}
+            return <ManageAnimals ANIMALS_API_URL={this.ANIMALS_API_URL}
                 animals={this.state.animals}
                 setActive={this.setActive}
                 processDeleteEditAnimal={this.processDeleteEditAnimal} />
@@ -67,7 +85,7 @@ class Main extends React.Component {
 
     // function to add animal listing to main state
     processAddNewAnimal = async (newAnimal) => {
-        let response = await axios.get(this.BASE_API_URL)
+        let response = await axios.get(this.ANIMALS_API_URL)
         this.setState({
             animals: response.data,
             active: "browse"
@@ -76,7 +94,7 @@ class Main extends React.Component {
 
     // function to delete animal listing from main state
     processDeleteEditAnimal = async (deleteAnimalId) => {
-        let response = await axios.get(this.BASE_API_URL)
+        let response = await axios.get(this.ANIMALS_API_URL)
         this.setState({
             animals: response.data
         })
@@ -89,7 +107,7 @@ class Main extends React.Component {
                     <div id='nav'>
                         <Navbar setActive={this.setActive} />
                     </div>
-                    <div id='content'>
+                    <div id='content' className={this.state.loaded ? "" : "d-flex"} >
                         {this.renderPage()}
                     </div>
                     <div id='footer'>

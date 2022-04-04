@@ -22,6 +22,10 @@
     flex-grow: 1;
 }
 
+.modal-dialog {
+    max-width: 800px !important;
+}
+
 .modal-img {
     width: 100%
 }

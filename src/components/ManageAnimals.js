@@ -25,7 +25,7 @@ export default class ManageAnimals extends React.Component {
 
     // function to store listings of a specific user
     storeUserListings = async () => {
-        let response = await axios.get(this.props.BASE_API_URL + "/user_listings", {params: {email: this.state.userEmail}})
+        let response = await axios.get(this.props.ANIMALS_API_URL + "/user_listings", {params: {email: this.state.userEmail}})
         this.setState({
             userListings: response.data,
             loaded: true,
@@ -99,7 +99,7 @@ export default class ManageAnimals extends React.Component {
 
     // function to delete animal listing 
     deleteAnimal = async (deleteAnimalId) => {
-        await axios.delete(this.props.BASE_API_URL + "/" + deleteAnimalId)
+        await axios.delete(this.props.ANIMALS_API_URL + "/" + deleteAnimalId)
         let updatedUserListings = this.state.userListings.filter(l => l._id !== deleteAnimalId)
         this.setState({
             userListings: updatedUserListings
@@ -109,7 +109,7 @@ export default class ManageAnimals extends React.Component {
 
     // function to edit/put animal listing
     editAnimal = async (editedAnimalData) => {
-        await axios.patch(this.props.BASE_API_URL + "/" + this.state.editAnimalDetails.editId, editedAnimalData)
+        await axios.patch(this.props.ANIMALS_API_URL + "/" + this.state.editAnimalDetails.editId, editedAnimalData)
         this.storeUserListings()
         this.props.processDeleteEditAnimal()
         // if success close the modal? modal dismissal. 
@@ -128,7 +128,7 @@ export default class ManageAnimals extends React.Component {
                 <div className='container-fluid'>
                     <h3>Manage Animal Listings</h3>
                     {this.state.loaded ?
-                        <ManageUserListings BASE_API_URL={this.props.BASE_API_URL}
+                        <ManageUserListings ANIMALS_API_URL={this.props.ANIMALS_API_URL}
                             setActive={this.props.setActive}
                             updateEditFormField={this.updateEditFormField}
                             updateEditCheckbox={this.updateEditCheckbox}
@@ -142,7 +142,7 @@ export default class ManageAnimals extends React.Component {
                             editValid={this.state.editValid}
                             editFormIsValid={this.editFormIsValid} />
                         :
-                        <ManageListingForm BASE_API_URL={this.props.BASE_API_URL}
+                        <ManageListingForm ANIMALS_API_URL={this.props.ANIMALS_API_URL}
                             animals={this.props.animals}
                             updateFormField={this.updateFormField}
                             setActive={this.props.setActive}

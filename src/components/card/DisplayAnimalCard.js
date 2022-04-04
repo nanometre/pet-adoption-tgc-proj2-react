@@ -1,7 +1,13 @@
 import React from "react";
+import CommentForm from "../form/CommentForm";
 import '../../assets/styles/card/display-animal-card.css'
 
 export default function DisplayAnimalCard(props) {
+    let animalComments = props.comments.filter(comment => comment._id === props.animal._id)
+    if (animalComments.length > 0) {
+        console.log(animalComments)
+    }
+
     return (
         <div className="card">
             <img className="card-img-top" src={props.animal.img_url} alt={props.animal.name} />
@@ -24,6 +30,8 @@ export default function DisplayAnimalCard(props) {
                                 <img className="modal-img" src={props.animal.img_url} alt={props.animal.name} />
                                 <div>
                                     <p>{props.animal.description}</p>
+                                    <hr />
+                                    <h5>Animal's Details</h5>
                                     <table className="table table-borderless">
                                         <tbody>
                                             <tr>
@@ -44,14 +52,15 @@ export default function DisplayAnimalCard(props) {
                                             </tr>
                                             <tr>
                                                 <td>Status Tags</td>
-                                                <td>{props.animal.status_tags.map(t => <span key={t}>{t}<br/></span>)}</td>
+                                                <td>{props.animal.status_tags.map(t => <span key={t}>{t}<br /></span>)}</td>
                                             </tr>
                                             <tr>
                                                 <td>Available for</td>
-                                                <td>{props.animal.adopt_foster.map(af => <span key={af}>{af}<br/></span>)}</td>
+                                                <td>{props.animal.adopt_foster.map(af => <span key={af}>{af}<br /></span>)}</td>
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <hr />
                                     <h5>Current Caretaker's Details</h5>
                                     <table className="table table-borderless">
                                         <tbody>
@@ -65,6 +74,34 @@ export default function DisplayAnimalCard(props) {
                                             </tr>
                                         </tbody>
                                     </table>
+                                </div>
+
+                                <hr />
+                                <h5>Comments</h5>
+                                {animalComments.length !== 0
+                                    ?
+                                    // Render code below when there's comments submitted
+                                    <div>
+                                        {animalComments[0].comments.map((comment, i) => 
+                                            <div key={i}>
+                                                <p>{comment.commenter_name} {comment.date_of_comment}</p>
+                                                <p></p>
+                                                <p>{comment.content}</p>
+                                            </div>)}
+                                            {/* use commentcard to make the code more concise */}
+                                    </div>
+                                    :
+                                    // Render code below when there's no comments submitted
+                                    <div>   
+                                        No comments submitted yet.
+                                    </div>}
+                                <hr />
+                                <div>
+                                    <CommentForm animal_name={props.animal.name}
+                                        commentAnimalId={props.commentAnimalId}
+                                        commentName={props.commentName}
+                                        commentContent={props.commentContent}
+                                        commentRating={props.commentRating} />
                                 </div>
                             </div>
                             <div className="modal-footer">

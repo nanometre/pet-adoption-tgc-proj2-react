@@ -1,0 +1,20 @@
+.carousel-img {
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover; 
+}
+
+.carousel-img-container {
+    position: relative;
+}
+
+/* change font size in carousel in different screen width */
+.carousel-img-container > #callout {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 2 !important;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 50px;
+    font-weight: 500;
+}

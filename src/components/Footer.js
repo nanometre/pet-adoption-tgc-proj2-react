@@ -11,9 +11,9 @@ export default function Footer() {
         <React.Fragment>
             <footer className="text-center text-white" style={{ backgroundColor: "#1976d2" }}>
                 {/* <!-- Grid container --> */}
-                <div className="container pt-4">
+                <div className="container pt-3">
                     {/* <!-- Section: Social media --> */}
-                    <section className="mb-4">
+                    <section className="mb-3">
                         {/* <!-- Linkedin --> */}
                         <IconButton onClick={() => openInNewTab("https://www.linkedin.com/in/benedictwcy/")}>
                             <LinkedInIcon style={{color: 'white'}} />
@@ -32,7 +32,7 @@ export default function Footer() {
                 {/* <!-- Grid container --> */}
 
                 {/* <!-- Copyright --> */}
-                <div className="text-center text-light p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                <div className="text-center text-light p-2" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
                     © {new Date().getFullYear()} nanometre. All rights reserved.
                 </div>
                 {/* <!-- Copyright --> */}
