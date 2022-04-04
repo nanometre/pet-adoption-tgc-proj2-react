@@ -101,7 +101,8 @@ export default function DisplayAnimalCard(props) {
                                         commentAnimalId={props.commentAnimalId}
                                         commentName={props.commentName}
                                         commentContent={props.commentContent}
-                                        commentRating={props.commentRating} />
+                                        commentRating={props.commentRating}
+                                        updateCommentFormField={props.updateCommentFormField} />
                                 </div>
                             </div>
                             <div className="modal-footer">

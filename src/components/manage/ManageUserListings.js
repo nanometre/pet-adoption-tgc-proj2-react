@@ -18,7 +18,7 @@ export default function ManageUserListings(props) {
         } else {
             return (
                 <div>
-                    <p>Showing listing(s) for '{props.userEmail}'.</p>
+                    <p className='alert alert-success'>Showing listing(s) for '{props.userEmail}'.</p>
                     <div className="accordion" id="accordionManage">
                         {props.userListings.map((animal, i) => {
                             return (

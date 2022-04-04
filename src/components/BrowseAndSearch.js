@@ -12,19 +12,30 @@ export default class BrowseAndSearch extends React.Component {
         searchStatusTags: [],
         searchFosterAdopt: [],
         searchAgeGte: "",
-        searchAgeLte: ""
+        searchAgeLte: "",
+        commentAnimalId: "",
+        commentName: "",
+        commentContent: "",
+        commentRating: '4',
     }
 
-    // function for form fields 2 way binding
-    updateFormField = async (evt) => {
+    // function for comment form fields 2 way binding
+    updateCommentFormField = (evt) => {
         this.setState({
             [evt.target.name]: evt.target.value
         })
-        await setTimeout(() => {this.getSearchResults()}, 1000)
     }
 
-    // function for checkboxes 2 way binding
-    updateCheckbox = async (evt) => {
+    // function for search form fields 2 way binding
+    updateSearchFormField = async (evt) => {
+        this.setState({
+            [evt.target.name]: evt.target.value
+        })
+        await setTimeout(() => { this.getSearchResults() }, 1000)
+    }
+
+    // function for search checkboxes 2 way binding
+    updateSearchCheckbox = async (evt) => {
         let key = evt.target.name
         if (this.state[key].includes(evt.target.value)) {
             let indexToRemove = this.state[key].findIndex((t) => t === evt.target.value)
@@ -36,7 +47,7 @@ export default class BrowseAndSearch extends React.Component {
                 [key]: [...this.state[key], evt.target.value]
             })
         }
-        await setTimeout(() => {this.getSearchResults()}, 1000)
+        await setTimeout(() => { this.getSearchResults() }, 1000)
     }
 
     // function to get search results
@@ -66,17 +77,14 @@ export default class BrowseAndSearch extends React.Component {
                                     animal={animal}
                                     comments={this.props.comments}
                                     setActive={this.props.setActive}
-                                    commentAnimalId={this.props.commentAnimalId}
-                                    commentName={this.props.commentName}
-                                    commentContent={this.props.commentContent}
-                                    commentRating={this.props.commentRating} />
+                                    updateCommentFormField={this.updateCommentFormField}
+                                    commentAnimalId={this.state.commentAnimalId}
+                                    commentName={this.state.commentName}
+                                    commentContent={this.state.commentContent}
+                                    commentRating={this.state.commentRating} />
                             </React.Fragment>)
                     })}
                 </div>
-            )
-        } else {
-            return (
-                <div className="alert alert-danger">No results found</div>
             )
         }
     }
@@ -86,15 +94,16 @@ export default class BrowseAndSearch extends React.Component {
             <React.Fragment>
                 <div className="container-fluid">
                     <h3>Browse all of our fur friends here!</h3>
-                    <SearchForm updateFormField={this.updateFormField}
-                        updateCheckbox={this.updateCheckbox}
+                    <SearchForm updateSearchFormField={this.updateSearchFormField}
+                        updateSearchCheckbox={this.updateSearchCheckbox}
                         searchInput={this.state.searchInput}
                         searchGender={this.state.searchGender}
                         searchSpecies={this.state.searchSpecies}
                         searchStatusTags={this.state.searchStatusTags}
                         searchFosterAdopt={this.state.searchFosterAdopt}
                         searchAgeGte={this.state.searchAgeGte}
-                        searchAgeLte={this.state.searchAgeLte} />
+                        searchAgeLte={this.state.searchAgeLte}
+                        searchResults={this.state.searchResults} />
                     {this.renderResults()}
                 </div>
             </React.Fragment>

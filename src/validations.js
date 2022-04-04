@@ -57,3 +57,12 @@ export const editListingSchema = yup.object().shape({
         .url("Image URL is not a valid URL")
         .required("Image URL of animal is required")
 })
+
+export const commentSchema = yup.object().shape({
+    commentName: yup.string()
+        .required("Name is required")
+        .typeError("Name must be in alphabets"),
+    commentContent: yup.string()
+        .required("Comment is required")
+        .typeError("Comment must be in alphabets")
+})

@@ -18,10 +18,6 @@ class Main extends React.Component {
     state = {
         animals: [],
         comments: [],
-        commentAnimalId: "",
-        commentName: "",
-        commentContent: "",
-        commentRating: 0,
         loaded: false,
         active: 'home'
     }
@@ -46,22 +42,12 @@ class Main extends React.Component {
         if (this.state.loaded === false) {
             return <Loading />
         } else if (this.state.active === 'home') {
-            return <Home animals={this.state.animals}
-                comments={this.state.comments}
-                setActive={this.setActive}
-                commentAnimalId={this.state.commentAnimalId}
-                commentName={this.state.commentName}
-                commentContent={this.state.commentContent}
-                commentRating={this.state.commentRating} />
+            return <Home setActive={this.setActive} />
         } else if (this.state.active === 'browse') {
             return <BrowseAndSearch ANIMALS_API_URL={this.ANIMALS_API_URL}
                 animals={this.state.animals}
                 comments={this.state.comments}
-                setActive={this.setActive}
-                commentAnimalId={this.state.commentAnimalId}
-                commentName={this.state.commentName}
-                commentContent={this.state.commentContent}
-                commentRating={this.state.commentRating} />
+                setActive={this.setActive} />
         } else if (this.state.active === 'addAnimal') {
             return <AddAnimal ANIMALS_API_URL={this.ANIMALS_API_URL}
                 setActive={this.setActive}

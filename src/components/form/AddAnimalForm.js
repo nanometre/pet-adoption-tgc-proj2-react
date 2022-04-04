@@ -206,7 +206,7 @@ export default function AddAnimalForm(props) {
                     {/* submit and cancel buttons */}
                     <button className="btn btn-primary"
                         type="submit"
-                    >Submit</button>
+                    >Add</button>
                     <button className="btn btn-secondary"
                         onClick={() => props.setActive('browse')}>Cancel</button>
                 </form>
