@@ -9,6 +9,7 @@ export default function AddAnimalForm(props) {
         resolver: yupResolver(addAnimalSchema)
     })
     const submitForm = (data) => {
+        props.addFormIsValid()
         props.addNewAnimal()
     }
 
@@ -203,6 +204,7 @@ export default function AddAnimalForm(props) {
                             {...register("newCaretakerEmail", { onChange: props.updateFormField })} />
                         <p className="form-error-message"> {errors.newCaretakerEmail?.message} </p>
                     </div>
+                    {props.addValid ? <div className='alert alert-success'>Animal successful added. Redirecting to Browse page.</div> : null}
                     {/* submit and cancel buttons */}
                     <button className="btn btn-primary"
                         type="submit"

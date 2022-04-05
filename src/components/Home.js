@@ -16,17 +16,17 @@ export default function Home(props) {
                     <button className="btn btn-primary"
                         onClick={() => props.setActive('browse')}>Browse more animals here!</button>
                 </div>
-                {/* add animal up for adoption and foster */}
-                <div>
-
-                </div>
                 {/* adoption process */}
                 <div>
-
+                    <h3>Our adoption process</h3>
                 </div>
+                {/* add animal up for adoption and foster */}
+                <div>
+                    <h3>Have a pet you would like to put up for adoption or fostering? Add them here!</h3>
+                </div> 
                 {/* manage listings if you are existing user */}
                 <div>
-
+                    <h3>If you have listed a pet before, you can manage your listings here.</h3>
                 </div>
             </div>
         </React.Fragment>

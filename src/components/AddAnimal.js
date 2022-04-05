@@ -15,6 +15,7 @@ export default class AddAnimal extends React.Component {
         newAdoptFoster: [],
         newCaretakerName: "",
         newCaretakerEmail: "",
+        addValid: false
     }
 
     // function for form fields 2 way binding
@@ -39,6 +40,12 @@ export default class AddAnimal extends React.Component {
         }
     }
 
+    addFormIsValid = () => {
+        this.setState({
+            addValid: true
+        })
+    }
+
     // post request to backend server
     addNewAnimal = async () => {
         let newAnimal = {
@@ -59,31 +66,32 @@ export default class AddAnimal extends React.Component {
             }
         }
         await axios.post(this.props.ANIMALS_API_URL, newAnimal)
-        this.props.processAddNewAnimal(newAnimal)
-
+        await this.props.processAddNewAnimal(newAnimal)
     }
 
     render() {
         return (
             <React.Fragment>
                 <div className='container-fluid'>
-                <h3>Add an animal for adoption or fostering!</h3>
-                <AddAnimalForm updateFormField={this.updateFormField}
-                    updateCheckbox={this.updateCheckbox}
-                    addNewAnimal={this.addNewAnimal}
-                    setActive={this.props.setActive}
-                    newName={this.state.newName}
-                    newImgUrl={this.state.newImgUrl}
-                    newGender={this.state.newGender}
-                    newDateOfBirth={this.state.newDateOfBirth}
-                    newSpecies={this.state.newSpecies}
-                    newBreed={this.state.newBreed}
-                    newDescription={this.state.newDescription}
-                    newStatusTags={this.state.newStatusTags}
-                    newAdoptFoster={this.state.newAdoptFoster}
-                    newCaretakerName={this.state.newCaretakerName}
-                    newCaretakerEmail={this.state.newCaretakerEmail}
-                />
+                    <h3>Add an animal for adoption or fostering!</h3>
+                    <AddAnimalForm updateFormField={this.updateFormField}
+                        updateCheckbox={this.updateCheckbox}
+                        addNewAnimal={this.addNewAnimal}
+                        setActive={this.props.setActive}
+                        newName={this.state.newName}
+                        newImgUrl={this.state.newImgUrl}
+                        newGender={this.state.newGender}
+                        newDateOfBirth={this.state.newDateOfBirth}
+                        newSpecies={this.state.newSpecies}
+                        newBreed={this.state.newBreed}
+                        newDescription={this.state.newDescription}
+                        newStatusTags={this.state.newStatusTags}
+                        newAdoptFoster={this.state.newAdoptFoster}
+                        newCaretakerName={this.state.newCaretakerName}
+                        newCaretakerEmail={this.state.newCaretakerEmail}
+                        addValid={this.state.addValid}
+                        addFormIsValid={this.addFormIsValid}
+                    />
                 </div>
             </React.Fragment>
         )

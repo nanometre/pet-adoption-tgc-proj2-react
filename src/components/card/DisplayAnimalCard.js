@@ -4,9 +4,6 @@ import '../../assets/styles/card/display-animal-card.css'
 
 export default function DisplayAnimalCard(props) {
     let animalComments = props.comments.filter(comment => comment._id === props.animal._id)
-    if (animalComments.length > 0) {
-        console.log(animalComments)
-    }
 
     return (
         <div className="card">
@@ -98,11 +95,14 @@ export default function DisplayAnimalCard(props) {
                                 <hr />
                                 <div>
                                     <CommentForm animal_name={props.animal.name}
-                                        commentAnimalId={props.commentAnimalId}
+                                        animal_id={props.animal._id}
                                         commentName={props.commentName}
                                         commentContent={props.commentContent}
                                         commentRating={props.commentRating}
-                                        updateCommentFormField={props.updateCommentFormField} />
+                                        postComment={props.postComment}
+                                        updateCommentFormField={props.updateCommentFormField}
+                                        commentValid={props.commentValid}
+                                        commentFormIsValid={props.commentFormIsValid} />
                                 </div>
                             </div>
                             <div className="modal-footer">

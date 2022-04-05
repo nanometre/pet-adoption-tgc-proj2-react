@@ -13,16 +13,17 @@ export default class BrowseAndSearch extends React.Component {
         searchFosterAdopt: [],
         searchAgeGte: "",
         searchAgeLte: "",
-        commentAnimalId: "",
         commentName: "",
         commentContent: "",
-        commentRating: '4',
+        commentRating: '3',
+        commentValid: false
     }
 
     // function for comment form fields 2 way binding
     updateCommentFormField = (evt) => {
         this.setState({
-            [evt.target.name]: evt.target.value
+            [evt.target.name]: evt.target.value,
+            commentValid: false
         })
     }
 
@@ -66,6 +67,23 @@ export default class BrowseAndSearch extends React.Component {
         })
     }
 
+    commentFormIsValid = () => {
+        this.setState({
+            commentValid: true
+        })
+    }
+
+    // function to post new comments
+    postComment = async (animal_id, commentDetails) => {
+        this.setState({
+            commentName: "",
+            commentContent: "",
+            commentRating: '3',
+        })
+        await axios.post(this.props.COMMENTS_API_URL + "/" + animal_id, commentDetails)
+        this.props.processAddComment()
+    }
+
     renderResults = () => {
         if (this.state.searchResults.length !== 0) {
             return (
@@ -77,11 +95,13 @@ export default class BrowseAndSearch extends React.Component {
                                     animal={animal}
                                     comments={this.props.comments}
                                     setActive={this.props.setActive}
+                                    postComment={this.postComment}
                                     updateCommentFormField={this.updateCommentFormField}
-                                    commentAnimalId={this.state.commentAnimalId}
                                     commentName={this.state.commentName}
                                     commentContent={this.state.commentContent}
-                                    commentRating={this.state.commentRating} />
+                                    commentRating={this.state.commentRating}
+                                    commentValid={this.state.commentValid}
+                                    commentFormIsValid={this.commentFormIsValid} />
                             </React.Fragment>)
                     })}
                 </div>

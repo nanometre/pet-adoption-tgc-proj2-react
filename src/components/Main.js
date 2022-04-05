@@ -45,9 +45,11 @@ class Main extends React.Component {
             return <Home setActive={this.setActive} />
         } else if (this.state.active === 'browse') {
             return <BrowseAndSearch ANIMALS_API_URL={this.ANIMALS_API_URL}
+                COMMENTS_API_URL={this.COMMENTS_API_URL}
                 animals={this.state.animals}
                 comments={this.state.comments}
-                setActive={this.setActive} />
+                setActive={this.setActive}
+                processAddComment={this.processAddComment} />
         } else if (this.state.active === 'addAnimal') {
             return <AddAnimal ANIMALS_API_URL={this.ANIMALS_API_URL}
                 setActive={this.setActive}
@@ -69,7 +71,7 @@ class Main extends React.Component {
         })
     }
 
-    // function to add animal listing to main state
+    // function to process add animal listing by updating main state
     processAddNewAnimal = async (newAnimal) => {
         let response = await axios.get(this.ANIMALS_API_URL)
         this.setState({
@@ -78,11 +80,19 @@ class Main extends React.Component {
         })
     }
 
-    // function to delete animal listing from main state
+    // function to process delete animal listing by updating main state
     processDeleteEditAnimal = async (deleteAnimalId) => {
         let response = await axios.get(this.ANIMALS_API_URL)
         this.setState({
             animals: response.data
+        })
+    }
+
+    // function to process add comment by updating main state
+    processAddComment = async () => {
+        let response = await axios.get(this.COMMENTS_API_URL)
+        this.setState({
+            comments: response.data
         })
     }
 

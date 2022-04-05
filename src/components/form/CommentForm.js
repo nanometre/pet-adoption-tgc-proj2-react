@@ -10,8 +10,13 @@ export default function CommentForm(props) {
         resolver: yupResolver(commentSchema)
     })
     const submitForm = (data) => {
-        console.log(data)
-        console.log(props.commentRating)
+        let commentDetails = {
+            commenter_name: props.commentName,
+            content: props.commentContent,
+            rating: parseInt(props.commentRating),
+        }
+        props.commentFormIsValid()
+        props.postComment(props.animal_id, commentDetails)
     }
 
     return (
@@ -33,7 +38,7 @@ export default function CommentForm(props) {
                     <div>
                         <Rating
                             name="commentRating"
-                            value={props.commentRating}
+                            value={parseInt(props.commentRating)}
                             onChange={(newRating) => {
                                 props.updateCommentFormField(newRating)
                             }} />
@@ -47,6 +52,7 @@ export default function CommentForm(props) {
                         {...register("commentContent", { onChange: props.updateCommentFormField })}></textarea>
                     <p className="form-error-message"> {errors.commentContent?.message} </p>
                 </div>
+                {props.commentValid ? <div className='alert alert-success'>Comment successful added.</div> : null}
                 <button className="btn btn-success"
                     type="submit"
                 >Add comment</button>
