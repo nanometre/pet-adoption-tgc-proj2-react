@@ -1,5 +1,5 @@
 import React from 'react'
-import ManageAnimalCard from '../card/ManageAnimalCard'
+import ManageAnimalAccordion from '../sections/ManageAnimalAccordion'
 
 export default function ManageUserListings(props) {
     const renderUserListings = () => {
@@ -23,7 +23,7 @@ export default function ManageUserListings(props) {
                         {props.userListings.map((animal, i) => {
                             return (
                                 <React.Fragment key={i}>
-                                    <ManageAnimalCard i={i}
+                                    <ManageAnimalAccordion i={i}
                                         animal={animal}
                                         setActive={props.setActive}
                                         deleteAnimal={props.deleteAnimal}

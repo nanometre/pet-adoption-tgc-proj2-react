@@ -73,12 +73,12 @@ User Stories | Acceptance Criteria(s)
 1. Schema Validation with Yup and Express.js
 https://dev.to/franciscomendes10866/schema-validation-with-yup-and-express-js-3l19
 
-2. Icons created by Nikita Golubev and Freepik from Flaticon
+2. Frontend and Backend validation tutorial using yup from https://www.youtube.com/channel/UC8S4rDRZn6Z_StJ-hh7ph8g
 
-3. Pictures are taken from Freepik and Pexels
+3. Average function using map, reduce from https://jrsinclair.com/articles/2019/five-ways-to-average-with-js-reduce/
 
-4. Loading animation is by Prime from LottieFiles https://lottiefiles.com/43017-animal-care-loading
+4. Icons created by Nikita Golubev and Freepik from Flaticon
 
-5. Shuffle function from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+5. Pictures are taken from Freepik and Pexels
 
-6. Frontend and Backend validation tutorial using yup from https://www.youtube.com/channel/UC8S4rDRZn6Z_StJ-hh7ph8g
+6. Loading animation is by Prime from LottieFiles https://lottiefiles.com/43017-animal-care-loading

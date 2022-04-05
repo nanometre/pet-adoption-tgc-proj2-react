@@ -1,5 +1,6 @@
 import React from "react";
 import CommentForm from "../form/CommentForm";
+import CommentsList from "./CommentsList";
 import '../../assets/styles/card/display-animal-card.css'
 
 export default function DisplayAnimalCard(props) {
@@ -72,26 +73,8 @@ export default function DisplayAnimalCard(props) {
                                         </tbody>
                                     </table>
                                 </div>
-
                                 <hr />
-                                <h5>Comments</h5>
-                                {animalComments.length !== 0
-                                    ?
-                                    // Render code below when there's comments submitted
-                                    <div>
-                                        {animalComments[0].comments.map((comment, i) => 
-                                            <div key={i}>
-                                                <p>{comment.commenter_name} {comment.date_of_comment}</p>
-                                                <p></p>
-                                                <p>{comment.content}</p>
-                                            </div>)}
-                                            {/* use commentcard to make the code more concise */}
-                                    </div>
-                                    :
-                                    // Render code below when there's no comments submitted
-                                    <div>   
-                                        No comments submitted yet.
-                                    </div>}
+                                <CommentsList animalComments={animalComments} />
                                 <hr />
                                 <div>
                                     <CommentForm animal_name={props.animal.name}

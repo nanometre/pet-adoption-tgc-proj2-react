@@ -5,11 +5,10 @@ import Carousel from "./home/Carousel";
 export default function Home(props) {
     return (
         <React.Fragment>
+            {/* call to action banner */}
+            <Carousel />
             <div className="container-fluid">
-                {/* call to action banner */}
-                <div>
-                    <Carousel />
-                </div>
+                
                 {/* browse more all animal listings*/}
                 <div>
                     <h3>Meet some of our fur friends</h3>
@@ -26,7 +25,7 @@ export default function Home(props) {
                 </div> 
                 {/* manage listings if you are existing user */}
                 <div>
-                    <h3>If you have listed a pet before, you can manage your listings here.</h3>
+                    <h3>Listed a pet before? You can manage your listings here.</h3>
                 </div>
             </div>
         </React.Fragment>

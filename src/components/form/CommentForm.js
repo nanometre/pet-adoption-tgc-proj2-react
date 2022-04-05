@@ -2,8 +2,8 @@ import React from 'react';
 import { commentSchema } from '../../validations';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import "../../assets/styles/form/form.css"
 import Rating from '@mui/material/Rating';
+import "../../assets/styles/form/form.css"
 
 export default function CommentForm(props) {
     const { register, handleSubmit, formState: { errors } } = useForm({

@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import DisplayAnimalCard from "./card/DisplayAnimalCard";
+import DisplayAnimalCard from "./sections/DisplayAnimalCard";
 import SearchForm from "./form/SearchForm";
 
 export default class BrowseAndSearch extends React.Component {

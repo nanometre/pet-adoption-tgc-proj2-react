@@ -1,7 +1,7 @@
 import React from "react";
 import EditListingForm from "../form/EditListingForm";
 
-export default function ManageAnimalCard(props) {
+export default function ManageAnimalAccordion(props) {
     return (
         <div className="accordion-item">
             <h2 className="accordion-header" id={"heading" + props.i}>
