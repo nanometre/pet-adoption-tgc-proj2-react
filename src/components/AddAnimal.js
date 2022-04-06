@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import AddAnimalForm from './form/AddAnimalForm'
+import "../assets/styles/page/add-animal.css"
 
 export default class AddAnimal extends React.Component {
     state = {
@@ -72,26 +73,29 @@ export default class AddAnimal extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className='container-fluid'>
-                    <h3>Add an animal for adoption or fostering!</h3>
-                    <AddAnimalForm updateFormField={this.updateFormField}
-                        updateCheckbox={this.updateCheckbox}
-                        addNewAnimal={this.addNewAnimal}
-                        setActive={this.props.setActive}
-                        newName={this.state.newName}
-                        newImgUrl={this.state.newImgUrl}
-                        newGender={this.state.newGender}
-                        newDateOfBirth={this.state.newDateOfBirth}
-                        newSpecies={this.state.newSpecies}
-                        newBreed={this.state.newBreed}
-                        newDescription={this.state.newDescription}
-                        newStatusTags={this.state.newStatusTags}
-                        newAdoptFoster={this.state.newAdoptFoster}
-                        newCaretakerName={this.state.newCaretakerName}
-                        newCaretakerEmail={this.state.newCaretakerEmail}
-                        addValid={this.state.addValid}
-                        addFormIsValid={this.addFormIsValid}
-                    />
+                <div className='container-fluid content-container'>
+                    <div className='add-content'>
+                        <h3>Add an animal for adoption or fostering</h3>
+                        <p>Listing your animal on our website helps to reach a greater audience pool and increasing the chances of them finding their furever home!</p>
+                        <AddAnimalForm updateFormField={this.updateFormField}
+                            updateCheckbox={this.updateCheckbox}
+                            addNewAnimal={this.addNewAnimal}
+                            setActive={this.props.setActive}
+                            newName={this.state.newName}
+                            newImgUrl={this.state.newImgUrl}
+                            newGender={this.state.newGender}
+                            newDateOfBirth={this.state.newDateOfBirth}
+                            newSpecies={this.state.newSpecies}
+                            newBreed={this.state.newBreed}
+                            newDescription={this.state.newDescription}
+                            newStatusTags={this.state.newStatusTags}
+                            newAdoptFoster={this.state.newAdoptFoster}
+                            newCaretakerName={this.state.newCaretakerName}
+                            newCaretakerEmail={this.state.newCaretakerEmail}
+                            addValid={this.state.addValid}
+                            addFormIsValid={this.addFormIsValid}
+                        />
+                    </div>
                 </div>
             </React.Fragment>
         )

@@ -1,20 +1,46 @@
-.carousel-img {
-    width: 100vw;
-    height: 60vh;
-    object-fit: cover; 
-}
-
-.carousel-img-container {
+.banner-container {
     position: relative;
 }
 
-/* change font size in carousel in different screen width */
-.carousel-img-container > #callout {
+.banner-container img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.banner-container #callout {
     position: absolute;
-    top: 50px;
-    left: 50px;
-    z-index: 2 !important;
-    background-color: rgba(255, 255, 255, 0.7);
-    font-size: 50px;
-    font-weight: 500;
+    z-index: 2;
+    margin: auto;
+    top: 60%;
+    left: 50%;
+    /* color: white; */
+    transform: translate(-50%, -20%);
+    width: 100%;
+    text-align: center;
+}
+
+#home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.home-content-block {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 90%
+}
+
+@media screen and (min-width: 769px) {
+    .banner-container img {
+        height: 60vh
+    }
+
+    #home-content {
+        flex-direction: row;
+    }
 }

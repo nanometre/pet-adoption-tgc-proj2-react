@@ -113,7 +113,7 @@ export default class BrowseAndSearch extends React.Component {
         return (
             <React.Fragment>
                 <div className="container-fluid">
-                    <h3>Browse all of our fur friends here!</h3>
+                    <h3>Browse all of our fur friends here</h3>
                     <SearchForm updateSearchFormField={this.updateSearchFormField}
                         updateSearchCheckbox={this.updateSearchCheckbox}
                         searchInput={this.state.searchInput}

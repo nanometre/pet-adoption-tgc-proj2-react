@@ -1,3 +1,7 @@
+.Main {
+    font-family: 'Roboto', sans-serif;
+  }  
+
 #page {
     min-height: 100vh;
     display: flex;
@@ -11,4 +15,14 @@
 
 #content {
     flex-grow: 1;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+h3 {
+    text-align: center;
 }

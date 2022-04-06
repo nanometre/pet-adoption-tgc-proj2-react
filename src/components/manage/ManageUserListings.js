@@ -5,20 +5,24 @@ export default function ManageUserListings(props) {
     const renderUserListings = () => {
         if (props.userListings.length === 0) {
             return (
-                <div>
-                    <p className='alert alert-danger'>No animal listings for '{props.userEmail}'.</p>
-                    <p>Add an animal listing using this email or go back to the previous page.</p>
-                    <button className="btn btn-primary"
-                        onClick={() => props.setActive('addAnimal')}>
-                        Add animal</button>
-                    <button className="btn btn-secondary"
-                        onClick={() => props.reenterEmail()}>
-                        Back</button>
+                <div className="custom-form">
+                    <form>
+                        <p className='alert alert-danger'>No animal listings for '{props.userEmail}'.</p>
+                        <p>Add an animal listing using this email or go back to the previous page.</p>
+                        <div className='custom-btn-group'>
+                            <button className="btn btn-primary"
+                                onClick={() => props.setActive('addAnimal')}>
+                                Add animal</button>
+                            <button className="btn btn-secondary"
+                                onClick={() => props.reenterEmail()}>
+                                Back</button>
+                        </div>
+                    </form>
                 </div>)
         } else {
             return (
                 <div>
-                    <p className='alert alert-success'>Showing listing(s) for '{props.userEmail}'.</p>
+                    <p className='alert alert-success'>Showing {props.userListings.length} listing(s) for '{props.userEmail.toLowerCase()}'.</p>
                     <div className="accordion" id="accordionManage">
                         {props.userListings.map((animal, i) => {
                             return (
@@ -37,8 +41,10 @@ export default function ManageUserListings(props) {
                                 </React.Fragment>)
                         })}
                     </div>
-                    <button className="btn btn-secondary"
-                        onClick={() => props.reenterEmail()}>Back</button>
+                    <div className='custom-btn-group'>
+                        <button className="btn btn-secondary"
+                            onClick={() => props.reenterEmail()}>Back</button>
+                    </div>
                 </div>
             )
         }

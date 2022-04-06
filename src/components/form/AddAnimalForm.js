@@ -15,7 +15,7 @@ export default function AddAnimalForm(props) {
 
     return (
         <div className='container-fluid d-flex flex-column align-items-center'>
-            <div className='customForm'>
+            <div className='custom-form'>
                 <form onSubmit={handleSubmit(submitForm)}>
                     {/* animal details */}
                     <h5>Animal's Details</h5>
@@ -27,24 +27,20 @@ export default function AddAnimalForm(props) {
                             name="newName"
                             value={props.newName}
                             {...register("newName", { onChange: props.updateFormField })} />
-                        <p className="form-error-message"> {errors.newName?.message} </p>
+                        {errors.newName ? <span className="form-error-message"> {errors.newName?.message} </span> : null}
                     </div>
                     {/* animal species input */}
                     <div>
-                        <div>
-                            <label>Species</label>
-                        </div>
-                        <div>
-                            <select className="form-select"
-                                name="newSpecies"
-                                onChange={props.updateFormField}
-                                value={props.newSpecies}>
-                                <option value="Dog">Dog</option>
-                                <option value="Cat">Cat</option>
-                                <option value="Hamster">Hamster</option>
-                                <option value="Others">Others</option>
-                            </select>
-                        </div>
+                        <label>Species</label>
+                        <select className="form-select form-control"
+                            name="newSpecies"
+                            onChange={props.updateFormField}
+                            value={props.newSpecies}>
+                            <option value="Dog">Dog</option>
+                            <option value="Cat">Cat</option>
+                            <option value="Hamster">Hamster</option>
+                            <option value="Others">Others</option>
+                        </select>
                     </div>
                     {/* animal breed input */}
                     <div>
@@ -55,15 +51,13 @@ export default function AddAnimalForm(props) {
                             value={props.newBreed}
                             {...register("newBreed", { onChange: props.updateFormField })}
                         />
-                        <p className="form-error-message"> {errors.newBreed?.message} </p>
+                        {errors.newBreed ? <span className="form-error-message"> {errors.newBreed?.message} </span> : null}
                     </div>
                     {/* animal gender input */}
                     <div>
+                        <label>Gender</label>
                         <div>
-                            <label>Gender</label>
-                        </div>
-                        <div>
-                            <select className="form-select"
+                            <select className="form-select form-control"
                                 name="newGender"
                                 onChange={props.updateFormField}
                                 value={props.newGender}>
@@ -81,13 +75,11 @@ export default function AddAnimalForm(props) {
                             value={props.newDateOfBirth}
                             placeholder="YYYY-MM-DD"
                             {...register("newDateOfBirth", { onChange: props.updateFormField })} />
-                        <p className="form-error-message"> {errors.newDateOfBirth?.message} </p>
+                        {errors.newDateOfBirth ? <span className="form-error-message"> {errors.newDateOfBirth?.message} </span> : null}
                     </div>
                     {/* animal status tag input */}
                     <div>
-                        <div>
-                            <label className="form-check-label" >Status Tags</label>
-                        </div>
+                        <label className="form-check-label d-block" >Status Tags</label>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input"
                                 type="checkbox"
@@ -131,9 +123,7 @@ export default function AddAnimalForm(props) {
                     </div>
                     {/* adopt and foster input */}
                     <div>
-                        <div>
-                            <label className="form-check-label" >Available for</label>
-                        </div>
+                        <label className="form-check-label d-block" >Available for</label>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input"
                                 type="checkbox"
@@ -154,7 +144,7 @@ export default function AddAnimalForm(props) {
                                 {...register("newAdoptFoster", { onChange: props.updateCheckbox })} />
                             <label className="form-check-label" htmlFor="foster">Foster</label>
                         </div>
-                        <p className="form-error-message"> {errors.newAdoptFoster?.message} </p>
+                        {errors.newAdoptFoster ? <span className="form-error-message"> {errors.newAdoptFoster?.message} </span> : null}
                     </div>
                     {/* description input */}
                     <div>
@@ -165,7 +155,7 @@ export default function AddAnimalForm(props) {
                             placeholder="Write a short description on the animal"
                             rows="5"
                             {...register("newDescription", { onChange: props.updateFormField })}></textarea>
-                        <p className="form-error-message"> {errors.newDescription?.message} </p>
+                        {errors.newDescription ? <span className="form-error-message"> {errors.newDescription?.message} </span> : null}
                     </div>
                     {/* image url input */}
                     <div>
@@ -175,10 +165,10 @@ export default function AddAnimalForm(props) {
                             name="newImgUrl"
                             value={props.newImgUrl}
                             {...register("newImgUrl", { onChange: props.updateFormField })} />
-                        <p className="form-error-message"> {errors.newImgUrl?.message} </p>
-                        {props.newImgUrl ? <img src={props.newImgUrl} 
-                                                alt="Rendered from URL" 
-                                                className='ImgUrlRendered'/> : null}
+                        {errors.newImgUrl ? <span className="form-error-message"> {errors.newImgUrl?.message} </span> : null}
+                        {props.newImgUrl ? <img src={props.newImgUrl}
+                            alt="Rendered from URL"
+                            className='img-url-rendered' /> : null}
                     </div>
                     {/* caretaker details */}
                     <h5>Current Caretaker's Details</h5>
@@ -192,7 +182,7 @@ export default function AddAnimalForm(props) {
                             placeholder="Name of individual or organisation"
                             {...register("newCaretakerName", { onChange: props.updateFormField })}
                         />
-                        <p className="form-error-message"> {errors.newCaretakerName?.message} </p>
+                        {errors.newCaretakerName ? <span className="form-error-message"> {errors.newCaretakerName?.message} </span> : null}
                     </div>
                     {/* caretaker email input */}
                     <div>
@@ -202,15 +192,47 @@ export default function AddAnimalForm(props) {
                             name="newCaretakerEmail"
                             value={props.newCaretakerEmail}
                             {...register("newCaretakerEmail", { onChange: props.updateFormField })} />
-                        <p className="form-error-message"> {errors.newCaretakerEmail?.message} </p>
+                        {errors.newCaretakerEmail ? <span className="form-error-message"> {errors.newCaretakerEmail?.message} </span> : null}
                     </div>
                     {props.addValid ? <div className='alert alert-success'>Animal successful added. Redirecting to Browse page.</div> : null}
-                    {/* submit and cancel buttons */}
-                    <button className="btn btn-primary"
-                        type="submit"
-                    >Add</button>
-                    <button className="btn btn-secondary"
-                        onClick={() => props.setActive('browse')}>Cancel</button>
+                    <div className='custom-btn-group'>
+                        {/* submit button */}
+                        <button className="btn btn-primary"
+                            type="submit"
+                        >Add</button>
+                        {/* button to trigger cancel modal */}
+                        <button className="btn btn-secondary"
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#cancelAddModal">Cancel</button>
+                    </div>
+                    {/* cancel modal */}
+                    <div className="modal fade" id="cancelAddModal" data-bs-backdrop="static" data-bs-keyboard="false">
+                        <div className="modal-dialog modal-dialog-centered">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title" id="cancelAddModalLabel">Discard changes?</h5>
+                                    <button type="button"
+                                        className="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div className="modal-body">
+                                    Discard changes and head to browse page?
+                                </div>
+                                <div className="modal-footer">
+                                    <button type="button"
+                                        className="btn btn-danger"
+                                        data-bs-dismiss="modal"
+                                        onClick={() => props.setActive('browse')}>Discard changes</button>
+                                    <button type="button"
+                                        className="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

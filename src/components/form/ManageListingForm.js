@@ -14,8 +14,8 @@ export default function ManageListingForm(props) {
 
     return (
         <div className='container-fluid d-flex flex-column align-items-center'>
-            <h5>Input your email to manage your animal listings</h5>
-            <div className='customForm'>
+            <p>Input your email to manage your animal listings</p>
+            <div className='custom-form'>
                 <form onSubmit={handleSubmit(submitForm)}>
                     <div>
                         <label>Email</label>
@@ -24,13 +24,13 @@ export default function ManageListingForm(props) {
                             name="userEmail"
                             value={props.userEmail}
                             {...register("userEmail", { onChange: props.updateFormField })} />
-                        <p className="form-error-message"> {errors.userEmail?.message} </p>
+                        {errors.userEmail ? <span className="form-error-message"> {errors.userEmail?.message} </span> : null}
                     </div>
-                    <button className="btn btn-primary"
-                        type="submit"
-                    >Submit</button>
-                    <button className="btn btn-secondary"
-                        onClick={() => props.setActive('browse')}>Cancel</button>
+                    <div className="custom-btn-group">
+                        <button className="btn btn-primary"
+                            type="submit"
+                        >Submit</button>
+                    </div>
                 </form>
             </div>
         </div>

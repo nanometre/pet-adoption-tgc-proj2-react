@@ -1,9 +1,30 @@
-.content {
-    width: 100%
+.adoption-content {
+    width: 90%
 }
 
-@media screen and (min-width: 576px) {
-    .content {
+.adoption-content p, .adoption-content h5 {
+    text-align: justify;
+}
+
+.adoption-content-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.adoption-content img {
+    width: 90%;
+    max-height: 50vh;
+    object-fit: cover;
+}
+
+.adoption-content-block {
+    margin-top: 2rem;
+}
+
+@media screen and (min-width: 769px) {
+    .adoption-content {
         width: 60%
     }
 }

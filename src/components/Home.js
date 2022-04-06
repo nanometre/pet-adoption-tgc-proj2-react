@@ -1,31 +1,43 @@
 import React from "react";
-import Carousel from "./home/Carousel";
-
+import "../assets/styles/page/home.css"
 
 export default function Home(props) {
     return (
         <React.Fragment>
-            {/* call to action banner */}
-            <Carousel />
-            <div className="container-fluid">
-                
-                {/* browse more all animal listings*/}
-                <div>
-                    <h3>Meet some of our fur friends</h3>
+            {/* banner */}
+            <div className="banner-container">
+                {/* banner image */}
+                <img src={require("../assets/images/banner-img.jpg")} alt="Cat in animal shelter" />
+                {/* call to action and browse more all animal listings*/}
+                <div id="callout">
+                    <h1>Save a life, adopt a pet today!</h1>
+                    <h4>Meet some of our fur friends</h4>
                     <button className="btn btn-primary"
-                        onClick={() => props.setActive('browse')}>Browse more animals here!</button>
+                        onClick={() => props.setActive('browse')}>Browse</button>
                 </div>
+            </div>
+
+            <div id="home-content" className="container-fluid">
                 {/* adoption process */}
-                <div>
-                    <h3>Our adoption process</h3>
+                <div className="home-content-block">
+                    <h3>Interested in adopting?</h3>
+                    <p>Learn more about our adoption process.</p>
+                    <button className="btn btn-primary"
+                        onClick={() => props.setActive('adoptionProcess')}>Learn more</button>
                 </div>
                 {/* add animal up for adoption and foster */}
-                <div>
-                    <h3>Have a pet you would like to put up for adoption or fostering? Add them here!</h3>
-                </div> 
+                <div className="home-content-block">
+                    <h3>Putting up animals for adoption or fostering?</h3>
+                    <p>Add your animals to our website to increase their chance of finding a furever home.</p>
+                    <button className="btn btn-primary"
+                        onClick={() => props.setActive('addAnimal')}>Add animal</button>
+                </div>
                 {/* manage listings if you are existing user */}
-                <div>
-                    <h3>Listed a pet before? You can manage your listings here.</h3>
+                <div className="home-content-block">
+                    <h3>Listed an animal with us before?</h3>
+                    <p>Manage your listings here.</p>
+                    <button className="btn btn-primary"
+                        onClick={() => props.setActive('manageAnimals')}>Manage Listings</button>
                 </div>
             </div>
         </React.Fragment>

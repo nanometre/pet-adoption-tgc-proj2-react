@@ -99,7 +99,7 @@ class Main extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div id='page'>
+                <div id='page' className='Main'>
                     <div id='nav'>
                         <Navbar setActive={this.setActive} />
                     </div>

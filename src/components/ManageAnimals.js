@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ManageListingForm from './form/ManageListingForm';
 import ManageUserListings from './manage/ManageUserListings';
+import "../assets/styles/page/manage-animals.css"
 
 export default class ManageAnimals extends React.Component {
     state = {
@@ -25,7 +26,7 @@ export default class ManageAnimals extends React.Component {
 
     // function to store listings of a specific user
     storeUserListings = async () => {
-        let response = await axios.get(this.props.ANIMALS_API_URL + "/user_listings", {params: {email: this.state.userEmail}})
+        let response = await axios.get(this.props.ANIMALS_API_URL + "/user_listings", { params: { email: this.state.userEmail } })
         this.setState({
             userListings: response.data,
             loaded: true,
@@ -113,10 +114,10 @@ export default class ManageAnimals extends React.Component {
         this.storeUserListings()
         this.props.processDeleteEditAnimal()
         // if success close the modal? modal dismissal. 
-    } 
+    }
 
     // function to show that changes in edit form is valid
-    editFormIsValid= () => {
+    editFormIsValid = () => {
         this.setState({
             editValid: true
         })
@@ -125,29 +126,31 @@ export default class ManageAnimals extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className='container-fluid'>
-                    <h3>Manage Animal Listings</h3>
-                    {this.state.loaded ?
-                        <ManageUserListings ANIMALS_API_URL={this.props.ANIMALS_API_URL}
-                            setActive={this.props.setActive}
-                            updateEditFormField={this.updateEditFormField}
-                            updateEditCheckbox={this.updateEditCheckbox}
-                            storeOriginalDetails={this.storeOriginalDetails}
-                            reenterEmail={this.reenterEmail}
-                            deleteAnimal={this.deleteAnimal}
-                            editAnimal={this.editAnimal}
-                            userListings={this.state.userListings}
-                            userEmail={this.state.userEmail}
-                            editAnimalDetails={this.state.editAnimalDetails}
-                            editValid={this.state.editValid}
-                            editFormIsValid={this.editFormIsValid} />
-                        :
-                        <ManageListingForm ANIMALS_API_URL={this.props.ANIMALS_API_URL}
-                            animals={this.props.animals}
-                            updateFormField={this.updateFormField}
-                            setActive={this.props.setActive}
-                            storeUserListings={this.storeUserListings}
-                            userEmail={this.state.userEmail} />}
+                <div className='container-fluid content-container'>
+                    <div className='manage-content'>
+                        <h3>Manage your animal listings</h3>
+                        {this.state.loaded ?
+                            <ManageUserListings ANIMALS_API_URL={this.props.ANIMALS_API_URL}
+                                setActive={this.props.setActive}
+                                updateEditFormField={this.updateEditFormField}
+                                updateEditCheckbox={this.updateEditCheckbox}
+                                storeOriginalDetails={this.storeOriginalDetails}
+                                reenterEmail={this.reenterEmail}
+                                deleteAnimal={this.deleteAnimal}
+                                editAnimal={this.editAnimal}
+                                userListings={this.state.userListings}
+                                userEmail={this.state.userEmail}
+                                editAnimalDetails={this.state.editAnimalDetails}
+                                editValid={this.state.editValid}
+                                editFormIsValid={this.editFormIsValid} />
+                            :
+                            <ManageListingForm ANIMALS_API_URL={this.props.ANIMALS_API_URL}
+                                animals={this.props.animals}
+                                updateFormField={this.updateFormField}
+                                setActive={this.props.setActive}
+                                storeUserListings={this.storeUserListings}
+                                userEmail={this.state.userEmail} />}
+                    </div>
                 </div>
             </React.Fragment>
         )

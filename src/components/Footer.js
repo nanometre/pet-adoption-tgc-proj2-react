@@ -4,6 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import IconButton from '@mui/material/IconButton';
 import { openInNewTab } from '../utils';
+import "../assets/styles/page/footer.css"
 
 
 export default function Footer() {
@@ -33,7 +34,7 @@ export default function Footer() {
 
                 {/* <!-- Copyright --> */}
                 <div className="text-center text-light p-2" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-                    © {new Date().getFullYear()} nanometre. All rights reserved.
+                    © {new Date().getFullYear()} nanometre. For educational purpose only.
                 </div>
                 {/* <!-- Copyright --> */}
             </footer>

@@ -70,7 +70,7 @@ User Stories | Acceptance Criteria(s)
 
 
 ## Credits
-1. Schema Validation with Yup and Express.js
+1. Schema Validation with Yup and Express.js from
 https://dev.to/franciscomendes10866/schema-validation-with-yup-and-express-js-3l19
 
 2. Frontend and Backend validation tutorial using yup from https://www.youtube.com/channel/UC8S4rDRZn6Z_StJ-hh7ph8g
@@ -82,3 +82,7 @@ https://dev.to/franciscomendes10866/schema-validation-with-yup-and-express-js-3l
 5. Pictures are taken from Freepik and Pexels
 
 6. Loading animation is by Prime from LottieFiles https://lottiefiles.com/43017-animal-care-loading
+
+7. Code for Hero Image Scroll from https://codemyui.com/hero-image-zoom-scroll-load-article/
+
+8. Content in adoption process page is adapted from https://www.causesforanimals.com/cas-adoption-process.html. 
