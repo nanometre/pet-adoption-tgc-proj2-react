@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import DisplayAnimalCard from "./sections/DisplayAnimalCard";
 import SearchForm from "./form/SearchForm";
+import "../assets/styles/page/browse-and-search.css"
 
 export default class BrowseAndSearch extends React.Component {
     state = {
@@ -112,19 +113,25 @@ export default class BrowseAndSearch extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="container-fluid">
-                    <h3>Browse all of our fur friends here</h3>
-                    <SearchForm updateSearchFormField={this.updateSearchFormField}
-                        updateSearchCheckbox={this.updateSearchCheckbox}
-                        searchInput={this.state.searchInput}
-                        searchGender={this.state.searchGender}
-                        searchSpecies={this.state.searchSpecies}
-                        searchStatusTags={this.state.searchStatusTags}
-                        searchFosterAdopt={this.state.searchFosterAdopt}
-                        searchAgeGte={this.state.searchAgeGte}
-                        searchAgeLte={this.state.searchAgeLte}
-                        searchResults={this.state.searchResults} />
-                    {this.renderResults()}
+                <div className="container-fluid content-container">
+                    <div className="browse-content row">
+                        <h3>Browse all of our fur friends here</h3>
+                        <div className="col-3">
+                        <SearchForm updateSearchFormField={this.updateSearchFormField}
+                            updateSearchCheckbox={this.updateSearchCheckbox}
+                            searchInput={this.state.searchInput}
+                            searchGender={this.state.searchGender}
+                            searchSpecies={this.state.searchSpecies}
+                            searchStatusTags={this.state.searchStatusTags}
+                            searchFosterAdopt={this.state.searchFosterAdopt}
+                            searchAgeGte={this.state.searchAgeGte}
+                            searchAgeLte={this.state.searchAgeLte}
+                            searchResults={this.state.searchResults} />
+                        </div>
+                        <div className="col-9">
+                        {this.renderResults()}
+                        </div>
+                    </div>
                 </div>
             </React.Fragment>
         )

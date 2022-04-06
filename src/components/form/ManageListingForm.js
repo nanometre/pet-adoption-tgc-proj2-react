@@ -17,8 +17,9 @@ export default function ManageListingForm(props) {
             <p>Input your email to manage your animal listings</p>
             <div className='custom-form'>
                 <form onSubmit={handleSubmit(submitForm)}>
+                    {/* email input */}
                     <div>
-                        <label>Email</label>
+                        <label style={{marginTop: '0'}}>Email</label>
                         <input className="form-control"
                             type="text"
                             name="userEmail"
@@ -26,6 +27,7 @@ export default function ManageListingForm(props) {
                             {...register("userEmail", { onChange: props.updateFormField })} />
                         {errors.userEmail ? <span className="form-error-message"> {errors.userEmail?.message} </span> : null}
                     </div>
+                    {/* submit button */}
                     <div className="custom-btn-group">
                         <button className="btn btn-primary"
                             type="submit"

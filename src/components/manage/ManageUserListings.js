@@ -23,7 +23,7 @@ export default function ManageUserListings(props) {
             return (
                 <div>
                     <p className='alert alert-success'>Showing {props.userListings.length} listing(s) for '{props.userEmail.toLowerCase()}'.</p>
-                    <div className="accordion" id="accordionManage">
+                    <div className="accordion" id="accordionManage" >
                         {props.userListings.map((animal, i) => {
                             return (
                                 <React.Fragment key={i}>

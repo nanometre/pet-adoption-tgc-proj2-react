@@ -6,8 +6,24 @@
     text-align: center;
 }
 
+#animal-details {
+    margin-top: 1rem;
+}
+
 @media screen and (min-width: 769px) {
     .manage-content {
         width: 60%
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #animal-details, #caretaker-details {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #animal-details, #caretaker-details {
+        margin-top: 0;
     }
 }

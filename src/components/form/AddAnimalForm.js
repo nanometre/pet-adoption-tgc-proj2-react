@@ -3,6 +3,7 @@ import { addAnimalSchema } from '../../validations'
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import '../../assets/styles/form/form.css'
+import '../../assets/styles/section/modal.css'
 
 export default function AddAnimalForm(props) {
     const { register, handleSubmit, formState: { errors } } = useForm({

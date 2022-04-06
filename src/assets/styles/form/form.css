@@ -31,15 +31,9 @@
 }
 
 .img-url-rendered {
-    width: 90%;
+    width: 80%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0.5rem;
 }
-
-/* @media screen and (min-width: 769px) {
-    .custom-form {
-        width: 60%
-    }
-} */

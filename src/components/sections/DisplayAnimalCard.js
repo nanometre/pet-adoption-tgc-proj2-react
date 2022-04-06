@@ -2,6 +2,7 @@ import React from "react";
 import CommentForm from "../form/CommentForm";
 import CommentsList from "./CommentsList";
 import '../../assets/styles/section/display-animal-card.css'
+import '../../assets/styles/section/modal.css'
 
 export default function DisplayAnimalCard(props) {
     let animalComments = props.comments.filter(comment => comment._id === props.animal._id)

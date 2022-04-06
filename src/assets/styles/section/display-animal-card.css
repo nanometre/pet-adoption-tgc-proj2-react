@@ -22,14 +22,6 @@
     flex-grow: 1;
 }
 
-.modal-dialog {
-    max-width: 800px !important;
-}
-
-.modal-img {
-    width: 100%
-}
-
 @media screen and (max-width: 769px) {
     .card, .card-img-top {
         width: 15rem;
