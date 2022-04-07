@@ -20,3 +20,24 @@
         margin-top: 0;
     }
 }
+
+#browse-animal-desc {
+    margin-top: 1rem;
+}
+
+#browse-details > #browse-animal-details,
+#browse-details > #browse-caretaker-details {
+    margin-top: 0;
+}
+
+@media screen and (min-width: 769px) {
+    #browse-details > #browse-animal-details,
+    #browse-details > #browse-caretaker-details {
+        margin-top: 1rem;
+    }
+
+    #browse-animal-desc {
+        margin-top: 0rem;
+    }
+    
+}

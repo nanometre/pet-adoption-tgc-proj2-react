@@ -1,5 +1,5 @@
 import React from 'react'
-import ManageAnimalAccordion from '../sections/ManageAnimalAccordion'
+import ManageAnimalAccordion from '../section/ManageAnimalAccordion'
 
 export default function ManageUserListings(props) {
     const renderUserListings = () => {

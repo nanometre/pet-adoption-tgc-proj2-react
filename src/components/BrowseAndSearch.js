@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import DisplayAnimalCard from "./sections/DisplayAnimalCard";
+import DisplayAnimalCard from "./section/DisplayAnimalCard";
 import SearchForm from "./form/SearchForm";
 import "../assets/styles/page/browse-and-search.css"
 

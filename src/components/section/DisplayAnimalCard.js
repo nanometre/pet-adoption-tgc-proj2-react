@@ -1,6 +1,7 @@
 import React from "react";
 import CommentForm from "../form/CommentForm";
 import CommentsList from "./CommentsList";
+import CardTagLabels from "./CardTagLabels";
 import '../../assets/styles/section/display-animal-card.css'
 import '../../assets/styles/section/modal.css'
 
@@ -13,6 +14,8 @@ export default function DisplayAnimalCard(props) {
             <div className="card-body">
                 <h5 className="card-title">{props.animal.name}</h5>
                 <p className="card-text">{props.animal.description}</p>
+                <CardTagLabels i={props.i}
+                    animal={props.animal} />
                 {/* Button to trigger modal */}
                 <button type="button" className="card-btn btn btn-primary align-self-end" data-bs-toggle="modal" data-bs-target={"#staticBackdrop" + props.i}>
                     More
@@ -33,7 +36,7 @@ export default function DisplayAnimalCard(props) {
                                         <div className="col-md-8">
                                             <img className="modal-img" src={props.animal.img_url} alt={props.animal.name} />
                                         </div>
-                                        <div className="col-md-4">
+                                        <div id='browse-animal-desc' className="col-md-4">
                                             <p>{props.animal.description}</p>
                                         </div>
                                     </div>

@@ -1,0 +1,8 @@
+.tag-label {
+    font-size: 0.75rem;
+    /* border: 1px black solid; */
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.25rem;
+    margin: 0.125rem 0.25rem 0.125rem 0;
+    text-align: center;
+}
