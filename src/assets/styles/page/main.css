@@ -26,3 +26,7 @@
 h3 {
     text-align: center;
 }
+
+.btn-primary {
+    background-color: #1976d2 !important;
+}

@@ -10,10 +10,10 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = [{display: "Browse", value: "browse"}, 
-               {display: "Add Animal", value: "addAnimal"}, 
-               {display: "Manage", value: "manageAnimals"},
-               {display: "Adoption Process", value: "adoptionProcess"}];
+const pages = [{ display: "Browse", value: "browse" },
+{ display: "Add Animal", value: "addAnimal" },
+{ display: "Manage", value: "manageAnimals" },
+{ display: "Adoption Process", value: "adoptionProcess" }];
 
 export default function Navbar(props) {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -32,20 +32,26 @@ export default function Navbar(props) {
     }
 
     return (
-        <AppBar position="static">
-            <Container maxWidth="xl" style={{ margin: 0 }}>
+        <AppBar position="static" >
+            <Container maxWidth="false" style={{ margin: 0 }}>
                 <Toolbar disableGutters>
+                    <Box
+                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                        >
+                        <img src={require('../assets/images/paw-logo.png')}
+                        role='button'
+                        alt="Logo"
+                        style={{ height: '40px' }}
+                        onClick={() => props.setActive('home')} />
+                    </Box>
+                    
                     <Typography
                         variant="h6"
                         noWrap
                         component="div"
                         sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
                     >
-                        <img src={require('../assets/images/paw-logo.png')}
-                            role='button'
-                            alt="Logo"
-                            style={{ height: '40px' }}
-                            onClick={() => props.setActive('home')} />
+                        PAW PALS
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -78,8 +84,8 @@ export default function Navbar(props) {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page.value} 
-                                          onClick={() => changePage(page.value)}>
+                                <MenuItem key={page.value}
+                                    onClick={() => changePage(page.value)}>
                                     <Typography textAlign="center">{page.display}</Typography>
                                 </MenuItem>
                             ))}
@@ -97,7 +103,7 @@ export default function Navbar(props) {
                             style={{ height: '40px' }}
                             onClick={() => props.setActive('home')} />
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
                         {pages.map((page) => (
                             <Button
                                 key={page.value}

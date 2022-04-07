@@ -54,14 +54,16 @@ export default class BrowseAndSearch extends React.Component {
 
     // function to get search results
     getSearchResults = async () => {
-        let response = await axios.post(this.props.ANIMALS_API_URL + '/search', {
-            searchterm: this.state.searchInput,
-            gender: this.state.searchGender,
-            gteyear: this.state.searchAgeGte,
-            lteyear: this.state.searchAgeLte,
-            species_name: this.state.searchSpecies,
-            status_tags: this.state.searchStatusTags,
-            adopt_foster: this.state.searchFosterAdopt
+        let response = await axios.get(this.props.ANIMALS_API_URL + '/search', {
+            params: {
+                searchterm: this.state.searchInput,
+                gender: this.state.searchGender,
+                gteyear: this.state.searchAgeGte,
+                lteyear: this.state.searchAgeLte,
+                species_name: this.state.searchSpecies,
+                status_tags: this.state.searchStatusTags,
+                adopt_foster: this.state.searchFosterAdopt
+            }
         })
         this.setState({
             searchResults: response.data
@@ -115,21 +117,21 @@ export default class BrowseAndSearch extends React.Component {
             <React.Fragment>
                 <div className="container-fluid content-container">
                     <div className="browse-content row">
-                        <h3>Browse all of our fur friends here</h3>
-                        <div className="col-3">
-                        <SearchForm updateSearchFormField={this.updateSearchFormField}
-                            updateSearchCheckbox={this.updateSearchCheckbox}
-                            searchInput={this.state.searchInput}
-                            searchGender={this.state.searchGender}
-                            searchSpecies={this.state.searchSpecies}
-                            searchStatusTags={this.state.searchStatusTags}
-                            searchFosterAdopt={this.state.searchFosterAdopt}
-                            searchAgeGte={this.state.searchAgeGte}
-                            searchAgeLte={this.state.searchAgeLte}
-                            searchResults={this.state.searchResults} />
+                        <h3 style={{marginBottom: '1rem'}}>Browse all of our fur friends here</h3>
+                        <div className="col-lg-3 col-xxl-2">
+                            <SearchForm updateSearchFormField={this.updateSearchFormField}
+                                updateSearchCheckbox={this.updateSearchCheckbox}
+                                searchInput={this.state.searchInput}
+                                searchGender={this.state.searchGender}
+                                searchSpecies={this.state.searchSpecies}
+                                searchStatusTags={this.state.searchStatusTags}
+                                searchFosterAdopt={this.state.searchFosterAdopt}
+                                searchAgeGte={this.state.searchAgeGte}
+                                searchAgeLte={this.state.searchAgeLte}
+                                searchResults={this.state.searchResults} />
                         </div>
-                        <div className="col-9">
-                        {this.renderResults()}
+                        <div className="col-lg-9 col-xxl-10 search-result-container">
+                            {this.renderResults()}
                         </div>
                     </div>
                 </div>

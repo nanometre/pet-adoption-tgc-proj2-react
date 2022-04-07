@@ -1,0 +1,22 @@
+.browse-content {
+    width: 100%;
+}
+
+.custom-form > .search-form > div > label, 
+.custom-form > .search-form > div > div > label {
+    margin-top: 1rem;
+}
+
+#keyword-label {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 992px) {
+    .search-result-container {
+        margin-top: 1rem !important;
+    }
+
+    #gender-label {
+        margin-top: 0;
+    }
+}

@@ -18,7 +18,7 @@ export default function ManageAnimalAccordion(props) {
                     </div>
                     <div className="col-xl-7 row">
                         {/* animal details */}
-                        <div id="animal-details" className="col-xl-12 col-lg-6">
+                        <div id="manage-animal-details" className="col-xl-12 col-lg-6">
                             <h5>Animal's Details</h5>
                             <table className="table table-borderless">
                                 <tbody>
@@ -54,7 +54,7 @@ export default function ManageAnimalAccordion(props) {
                             </table>
                         </div>
                         {/* caretaker details */}
-                        <div id="caretaker-details" className="col-xl-12 col-lg-6">
+                        <div id="manage-caretaker-details" className="col-xl-12 col-lg-6">
                             <h5>Current Caretaker's Details</h5>
                             <table className="table table-borderless">
                                 <tbody>

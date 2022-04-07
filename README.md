@@ -77,7 +77,7 @@ https://dev.to/franciscomendes10866/schema-validation-with-yup-and-express-js-3l
 
 3. Average function using map, reduce from https://jrsinclair.com/articles/2019/five-ways-to-average-with-js-reduce/
 
-4. Icons created by Nikita Golubev and Freepik from Flaticon
+4. Icons created by bqlqn, Nikita Golubev and Freepik from Flaticon
 
 5. Pictures are taken from Freepik and Pexels
 

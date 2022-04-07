@@ -21,42 +21,47 @@ export default function CommentForm(props) {
 
     return (
         <div>
-            <p>Visited {props.animal_name} before?</p>
-            <p>Leave a comment to help {props.animal_name} get adopted or fostered!</p>
-            <form onSubmit={handleSubmit(submitForm)}>
-                <div>
-                    <label>Name</label>
-                    <input className="form-control"
-                        type="text"
-                        name="commentName"
-                        value={props.commentName}
-                        {...register("commentName", { onChange: props.updateCommentFormField })} />
-                    <p className="form-error-message"> {errors.commentName?.message} </p>
-                </div>
-                <div>
-                    <label>Rating</label>
+            <span style={{display: 'block'}}>Visited <strong>{props.animal_name}</strong> before?</span>
+            <span>Leave a comment to help <strong>{props.animal_name}</strong> get adopted or fostered!</span>
+            <div className='custom-form'>
+                <form onSubmit={handleSubmit(submitForm)}>
                     <div>
-                        <Rating
-                            name="commentRating"
-                            value={parseInt(props.commentRating)}
-                            onChange={(newRating) => {
-                                props.updateCommentFormField(newRating)
-                            }} />
+                        <label>Rating</label>
+                        <div>
+                            <Rating
+                                name="commentRating"
+                                value={parseInt(props.commentRating)}
+                                onChange={(newRating) => {
+                                    props.updateCommentFormField(newRating)
+                                }} />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <label>Comment</label>
-                    <textarea className="form-control"
-                        name="commentContent"
-                        value={props.commentContent}
-                        {...register("commentContent", { onChange: props.updateCommentFormField })}></textarea>
-                    <p className="form-error-message"> {errors.commentContent?.message} </p>
-                </div>
-                {props.commentValid ? <div className='alert alert-success'>Comment successful added.</div> : null}
-                <button className="btn btn-success"
-                    type="submit"
-                >Add comment</button>
-            </form>
+                    <div>
+                        <label>Name</label>
+                        <input className="form-control"
+                            type="text"
+                            name="commentName"
+                            value={props.commentName}
+                            {...register("commentName", { onChange: props.updateCommentFormField })} />
+                        {errors.commentName ? <span className="form-error-message"> {errors.commentName?.message} </span> : null}
+                    </div>
+                    
+                    <div>
+                        <label>Comment</label>
+                        <textarea className="form-control"
+                            name="commentContent"
+                            value={props.commentContent}
+                            {...register("commentContent", { onChange: props.updateCommentFormField })}></textarea>
+                        {errors.commentContent ? <span className="form-error-message"> {errors.commentContent?.message} </span> : null}
+                    </div>
+                    {props.commentValid ? <div className='alert alert-success'>Comment successful added.</div> : null}
+                    <div className='custom-btn-group'>
+                        <button className="btn btn-success"
+                            type="submit"
+                        >Add comment</button>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }

@@ -26,56 +26,70 @@ export default function DisplayAnimalCard(props) {
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
-                                <img className="modal-img" src={props.animal.img_url} alt={props.animal.name} />
-                                <div>
-                                    <p>{props.animal.description}</p>
-                                    <hr />
-                                    <h5>Animal's Details</h5>
-                                    <table className="table table-borderless">
-                                        <tbody>
-                                            <tr>
-                                                <td>Species</td>
-                                                <td>{props.animal.species.species_name}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Breed</td>
-                                                <td>{props.animal.species.breed}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Gender</td>
-                                                <td>{props.animal.gender}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Date of Birth</td>
-                                                <td>{props.animal.date_of_birth.slice(0, 10)}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Status Tags</td>
-                                                <td>{props.animal.status_tags.map(t => <span key={t}>{t}<br /></span>)}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Available for</td>
-                                                <td>{props.animal.adopt_foster.map(af => <span key={af}>{af}<br /></span>)}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <hr />
-                                    <h5>Current Caretaker's Details</h5>
-                                    <table className="table table-borderless">
-                                        <tbody>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>{props.animal.current_caretaker.caretaker_name}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Email</td>
-                                                <td>{props.animal.current_caretaker.email}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                {/* animal and caretaker details */}
+                                <div id="browse-details" className="d-flex row">
+                                    {/* animal image and description */}
+                                    <div className="col-12 col-md-12 row">
+                                        <div className="col-md-8">
+                                            <img className="modal-img" src={props.animal.img_url} alt={props.animal.name} />
+                                        </div>
+                                        <div className="col-md-4">
+                                            <p>{props.animal.description}</p>
+                                        </div>
+                                    </div>
+                                    {/* animal details */}
+                                    <div id="browse-animal-details" className="col-12 col-md-6">
+                                        <h5>Animal's Details</h5>
+                                        <table className="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope='row'>Species</th>
+                                                    <td>{props.animal.species.species_name}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope='row'>Breed</th>
+                                                    <td>{props.animal.species.breed}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope='row'>Gender</th>
+                                                    <td>{props.animal.gender}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope='row'>Date of Birth</th>
+                                                    <td>{props.animal.date_of_birth.slice(0, 10)}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope='row'>Status Tags</th>
+                                                    <td>{props.animal.status_tags.map(t => <span key={t}>{t}<br /></span>)}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope='row'>Available for</th>
+                                                    <td>{props.animal.adopt_foster.map(af => <span key={af}>{af}<br /></span>)}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    {/* caretaker details */}
+                                    <div id="browse-caretaker-details" className="col-12 col-md-6">
+                                        <h5>Current Caretaker's Details</h5>
+                                        <table className="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope='row'>Name</th>
+                                                    <td>{props.animal.current_caretaker.caretaker_name}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope='row'>Email</th>
+                                                    <td>{props.animal.current_caretaker.email}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                                 <hr />
-                                <CommentsList animalComments={animalComments} />
+                                {/* comments */}
+                                <CommentsList animal_name={props.animal.name}
+                                    animalComments={animalComments} />
                                 <hr />
                                 <div>
                                     <CommentForm animal_name={props.animal.name}

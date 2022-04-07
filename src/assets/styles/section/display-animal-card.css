@@ -1,5 +1,6 @@
 .card {
-    width: 20rem;
+    width: 21rem;
+    margin-bottom: 1rem;
 }
 
 .card-img-top {
@@ -22,8 +23,8 @@
     flex-grow: 1;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 992px) {
     .card, .card-img-top {
-        width: 15rem;
+        width: 18rem;
     }
 }

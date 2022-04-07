@@ -6,8 +6,20 @@
     min-width: 80vw !important;
 }
 
-@media screen and (min-width: 992px) {
+#browse-details > #browse-animal-details,
+#browse-details > #browse-caretaker-details {
+    margin-top: 0;
+}
+
+@media screen and (min-width: 1200px) {
     .modal-dialog {
         min-width: 60vw !important;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    #browse-details > #browse-animal-details,
+    #browse-details > #browse-caretaker-details {
+        margin-top: 1rem;
     }
 }
