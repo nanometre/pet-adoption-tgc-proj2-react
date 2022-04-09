@@ -72,9 +72,15 @@ Acceptance Criteria: To browse and search animals based on certain criteria (e.g
 The wireframes for mobile and laptop display for the web application can be accessed [here](https://github.com/nanometre/pet-adoption-tgc-proj2-react/blob/main/src/assets/images/readme-images/skeleton.pdf)
 
 ### Surface
+<<<<<<< HEAD
 **Colours**: Simple colour combination of green, white, and black is used. Green was selected as it typically symbolises life and renewal to reflect giving a new life to the animals by adopting them.
 
 **Font Choice**: Roboto font is used for the project. The sans-serif font style makes it legible and readable. Standard font sizes are used as the web application is catered for adults.
+=======
+**Colours**: Simple colour combination of green, white and black is used. Green was selected as it typically symbolises life and renewal to reflect giving a new life to the animals by adopting them.
+
+**Font Choice**: Roboto font is used for the project. The sans-serif font style makes it legible and readable. Standard font sizes are used as the web application is generally catered for adults.
+>>>>>>> efa4707b4bad368a1cff45465f896cc4ac22daff
 
 **Layout**: Simple layout with navigation bar and buttons which enable users to easily navigate the web application.
 
@@ -83,8 +89,13 @@ The wireframes for mobile and laptop display for the web application can be acce
 Features | Descriptions
 -------- | -------------
 Browse all animal listings | Users can browse all the animal listings available for fostering and/or adoption.
+<<<<<<< HEAD
 View details of animal listings | Users can click on the individual animal listing and will display all the details (e.g., species, breed, current caretaker details, reviews).
 Search animal listings | Users can search for listings based on various criteria. The search will occur as the users type into the inputs or check/uncheck the checkboxes.
+=======
+View detials of animal listings | Users can click on the individual animal listing and will display all the detials (e.g., species, breed, current caretaker details, reviews).
+Search animal listings | Users can search for listings based on various criterias. The search will occur as the users type into the inputs or check/uncheck the checkboxes.
+>>>>>>> efa4707b4bad368a1cff45465f896cc4ac22daff
 Add reviews for animal listings | Users can submit reviews on the individual animal listing.
 Add new animal listing | Users can add a new animal listing for adoption or fostering.
 Manage animal listings | Users can input a caretaker email with existing animal listings and edit/delete the animal listings under the caretaker.
@@ -92,16 +103,24 @@ Manage animal listings | Users can input a caretaker email with existing animal 
 ### Limitations and future implementations
 Limitations | Future Implementations to Resolve Limitations
 ----------- | -------------
+<<<<<<< HEAD
 User must manually input date of birth when adding or editing listings. | For better UX, allow users to select the date of birth using a calendar.
 Images are "uploaded" by providing a working URL of an image and only one image can be "uploaded" for each listing. | Implement an image upload system to allow users to upload multiple image files from the web application. Then display all the images that are upload on the frontend web application.
 Managing animal listings only require users to input an email address, and it is not secure because the email address is visible in the animal details. | Implement a sign up and login system such that authorised users (current caretakers) can edit or delete the listings.
 Potential fosterers/adopters must manually email the caretaker to express interest to foster/adopt | Implement a form which users can fill up on the web application to express their interest. Upon submission of the form, the web application will directly send an email to the caretaker. Users would not need a separate email application to express their interest.
+=======
+Date of birth has to be manually inputted by the user when adding or editing listings. | For better UX, Allow users to select the date of birth using a calendar.
+Images are "uploaded" by providing a working URL of an image and only one image can be "uploaded" for each listing. | Implement an image upload system to allow users to upload multiple image files from the web application. Then display all the images that are upload on the frontend web application.
+Managing animal listings only require users to input an email address, and it's not secure because the email address is visible in the animal details. | Implement a sign up and login system such that authorised users (current caretakers) can edit or delete the listings.
+Potential fosterers/adopters have to manually email the caretaker to express interest to foster/adopt | Implement a form which users can fill up on the web application to express their interest. Upon submission of the form, the web application will directly send an email to the caretaker. Users would not need a separate email application to express their interest.
+>>>>>>> efa4707b4bad368a1cff45465f896cc4ac22daff
 
 
 ## 4. Testing
 
 ### Test Cases
 Manual and unit testing have been done for this project. The test cases for the critical functionality of this project are documented [here](https://github.com/nanometre/pet-adoption-tgc-proj2-react/blob/main/src/assets/images/readme-images/test-cases.pdf).
+
 
 
 ## 5. Technologies Used
