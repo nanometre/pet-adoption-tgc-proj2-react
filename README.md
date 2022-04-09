@@ -47,7 +47,6 @@ User Story: Potential pet fosterers/adopters want to easily browse animals that 
 
 Acceptance Criteria: To browse and search animals based on certain criteria (e.g., gender of animal, species of animal) and view the details of the animal. Subsequently, a way to contact the current pet fosterers to express interest in fostering/adoption.
 
-
 ### Scope
 
 **Functional Requirements**
@@ -70,27 +69,40 @@ Acceptance Criteria: To browse and search animals based on certain criteria (e.g
 <br>
 
 ### Skeleton
-The wireframes for mobile and laptop display for the web application can be accessed [here]()
+The wireframes for mobile and laptop display for the web application can be accessed [here](https://github.com/nanometre/pet-adoption-tgc-proj2-react/blob/main/src/assets/images/readme-images/skeleton.pdf)
 
 ### Surface
-**Colours**: 
+**Colours**: Simple colour combination of green, white and black is used. Green was selected as it typically symbolises life and renewal to reflect giving a new life to the animals by adopting them.
 
-**Font Choice**: 
+**Font Choice**: Roboto font is used for the project. The sans-serif font style makes it legible and readable. Standard font sizes are used as the web application is generally catered for adults.
+
+**Layout**: Simple layout with navigation bar and buttons which enable users to easily navigate the web application.
 
 
 ## 3. Features
 Features | Descriptions
 -------- | -------------
+Browse all animal listings | Users can browse all the animal listings available for fostering and/or adoption.
+View detials of animal listings | Users can click on the individual animal listing and will display all the detials (e.g., species, breed, current caretaker details, reviews).
+Search animal listings | Users can search for listings based on various criterias. The search will occur as the users type into the inputs or check/uncheck the checkboxes.
+Add reviews for animal listings | Users can submit reviews on the individual animal listing.
+Add new animal listing | Users can add a new animal listing for adoption or fostering.
+Manage animal listings | Users can input a caretaker email with existing animal listings and edit/delete the animal listings under the caretaker.
 
 ### Limitations and future implementations
 Limitations | Future Implementations to Resolve Limitations
 ----------- | -------------
+Date of birth has to be manually inputted by the user when adding or editing listings. | For better UX, Allow users to select the date of birth using a calendar.
+Images are "uploaded" by providing a working URL of an image and only one image can be "uploaded" for each listing. | Implement an image upload system to allow users to upload multiple image files from the web application. Then display all the images that are upload on the frontend web application.
+Managing animal listings only require users to input an email address, and it's not secure because the email address is visible in the animal details. | Implement a sign up and login system such that authorised users (current caretakers) can edit or delete the listings.
+Potential fosterers/adopters have to manually email the caretaker to express interest to foster/adopt | Implement a form which users can fill up on the web application to express their interest. Upon submission of the form, the web application will directly send an email to the caretaker. Users would not need a separate email application to express their interest.
 
 
 ## 4. Testing
 
 ### Test Cases
 Manual and unit testing have been done for this project. The test cases for the critial functionality of this project is documented [here](https://github.com/nanometre/pet-adoption-tgc-proj2-react/blob/main/src/assets/images/readme-images/test-cases.pdf).
+
 
 ## 5. Technologies Used
 - [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5) / [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -141,13 +153,16 @@ Manual and unit testing have been done for this project. The test cases for the 
 
   Google fonts is used to select font families for the web application.
 
+
 ## 6. API & Sample Document
 This project makes use of a custom RESTful API which retrieves and manages a collection of animal records. The API was built using [Express.js](https://expressjs.com/) and uses [MongoDB](https://www.mongodb.com/) as the database. The source code and documentation for the API can be found here: [Paw Pals' RESTful API](https://github.com/nanometre/pet-adoption-tgc-proj2-express). The API is [hosted on Heroku](https://pet-adoption-tgc-proj2-express.herokuapp.com/) and is accessible from the frontend.
 
 The sample animal record document can be found in "2. Document Design" of the [Paw Pals' RESTful API repository](https://github.com/nanometre/pet-adoption-tgc-proj2-express#2-document-design).
 
+
 ## 7. Deployment
 The frontend project is deployed on Netlify. The live demo to the web application can be accessed [here](https://prismatic-phoenix-69c302.netlify.app/). 
+
 
 ## 8. Credits
 

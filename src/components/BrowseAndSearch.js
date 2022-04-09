@@ -49,7 +49,7 @@ export default class BrowseAndSearch extends React.Component {
                 [key]: [...this.state[key], evt.target.value]
             })
         }
-        await setTimeout(() => { this.getSearchResults() }, 1000)
+        await setTimeout(() => { this.getSearchResults() }, 500)
     }
 
     // function to get search results
