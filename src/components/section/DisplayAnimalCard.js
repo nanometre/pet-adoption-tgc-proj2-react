@@ -83,7 +83,7 @@ export default function DisplayAnimalCard(props) {
                                                 </tr>
                                                 <tr>
                                                     <th scope='row'>Email</th>
-                                                    <td>{props.animal.current_caretaker.email}</td>
+                                                    <td><a href={`mailto:${props.animal.current_caretaker.email}`}>{props.animal.current_caretaker.email}</a></td>
                                                 </tr>
                                             </tbody>
                                         </table>
