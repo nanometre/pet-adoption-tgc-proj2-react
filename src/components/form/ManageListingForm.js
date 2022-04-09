@@ -29,7 +29,7 @@ export default function ManageListingForm(props) {
                     </div>
                     {/* submit button */}
                     <div className="custom-btn-group">
-                        <button className="btn btn-primary"
+                        <button className="btn btn-primary custom-btn-primary"
                             type="submit"
                         >Submit</button>
                     </div>

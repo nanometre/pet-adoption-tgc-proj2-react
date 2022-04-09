@@ -10,7 +10,7 @@ import "../assets/styles/page/footer.css"
 export default function Footer() {
     return (
         <React.Fragment>
-            <footer className="text-center text-white" style={{ backgroundColor: "#1976d2" }}>
+            <footer className="text-center text-white" style={{ backgroundColor: "#008181" }}>
                 {/* <!-- Grid container --> */}
                 <div className="container pt-3">
                     {/* <!-- Section: Social media --> */}

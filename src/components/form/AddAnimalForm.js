@@ -198,7 +198,7 @@ export default function AddAnimalForm(props) {
                     {props.addValid ? <div className='alert alert-success'>Animal successful added. Redirecting to Browse page.</div> : null}
                     <div className='custom-btn-group'>
                         {/* submit button */}
-                        <button className="btn btn-primary"
+                        <button className="btn btn-primary custom-btn-primary"
                             type="submit"
                         >Add</button>
                         {/* button to trigger cancel modal */}

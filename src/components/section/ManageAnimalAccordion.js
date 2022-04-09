@@ -73,7 +73,7 @@ export default function ManageAnimalAccordion(props) {
                     <div className="custom-btn-group">
                         {/* button to trigger edit modal */}
                         <button type="button"
-                            className="btn btn-primary"
+                            className="btn btn-primary custom-btn-primary"
                             data-bs-toggle="modal"
                             data-bs-target={"#editModal" + props.i}
                             onClick={() => props.storeOriginalDetails(props.animal)}>Edit</button>

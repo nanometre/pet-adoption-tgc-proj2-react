@@ -7,10 +7,10 @@ export default function ManageUserListings(props) {
             return (
                 <div className="custom-form">
                     <form>
-                        <p className='alert alert-danger'>No animal listings for '{props.userEmail}'.</p>
+                        <p className='alert alert-danger'>No animal listing for '{props.userEmail}'.</p>
                         <p>Add an animal listing using this email or go back to the previous page.</p>
                         <div className='custom-btn-group'>
-                            <button className="btn btn-primary"
+                            <button className="btn btn-primary custom-btn-primary"
                                 onClick={() => props.setActive('addAnimal')}>
                                 Add animal</button>
                             <button className="btn btn-secondary"

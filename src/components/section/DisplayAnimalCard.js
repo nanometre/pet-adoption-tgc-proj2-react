@@ -17,7 +17,7 @@ export default function DisplayAnimalCard(props) {
                 <CardTagLabels i={props.i}
                     animal={props.animal} />
                 {/* Button to trigger modal */}
-                <button type="button" className="card-btn btn btn-primary align-self-end" data-bs-toggle="modal" data-bs-target={"#staticBackdrop" + props.i}>
+                <button type="button" className="card-btn btn btn-primary custom-btn-primary align-self-end" data-bs-toggle="modal" data-bs-target={"#staticBackdrop" + props.i}>
                     More
                 </button>
                 {/* Modal */}
@@ -107,7 +107,7 @@ export default function DisplayAnimalCard(props) {
                                 </div>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={() => props.setActive('adoptionProcess')}>Adopt me!</button>
+                                <button type="button" className="btn btn-primary custom-btn-primary" data-bs-dismiss="modal" onClick={() => props.setActive('adoptionProcess')}>Adopt me!</button>
                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>

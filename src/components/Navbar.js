@@ -32,7 +32,7 @@ export default function Navbar(props) {
     }
 
     return (
-        <AppBar position="static" >
+        <AppBar position="static" sx={{bgcolor: "#008181"}}>
             <Container maxWidth="false" style={{ margin: 0 }}>
                 <Toolbar disableGutters>
                     <Box
