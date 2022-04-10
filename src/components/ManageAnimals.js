@@ -113,7 +113,6 @@ export default class ManageAnimals extends React.Component {
         await axios.patch(this.props.ANIMALS_API_URL + "/" + this.state.editAnimalDetails.editId, editedAnimalData)
         this.storeUserListings()
         this.props.processDeleteEditAnimal()
-        // if success close the modal? modal dismissal. 
     }
 
     // function to show that changes in edit form is valid

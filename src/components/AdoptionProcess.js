@@ -13,7 +13,7 @@ export default function AdoptionProcess() {
                         <img src={require('../assets/images/adoption-img.jpg')} alt="Puppy being petted" />
                     </div>
                     <div className="adoption-content-block">
-                        <h5>Step 1: Interested in Adoption?</h5>
+                        <h5>Step 1: Interested in Adopting?</h5>
                         <p>Contact the respective caretaker of the animal (either an organisation or individual) for all enquiries about the animal. The names and email addresses can be found in the respective animal information card.</p>
                     </div>
                     <div className="adoption-content-block">

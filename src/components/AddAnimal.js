@@ -73,6 +73,9 @@ export default class AddAnimal extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <img src={require('../assets/images/add-animal-img.jpg')} 
+                    alt="Puppy in shelter" 
+                    style={{width: "100vw", height: "50vh", objectFit: "cover"}}/>
                 <div className='container-fluid content-container'>
                     <div className='add-content'>
                         <h3>Add an animal for adoption or fostering</h3>

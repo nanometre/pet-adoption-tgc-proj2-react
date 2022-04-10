@@ -1,24 +1,24 @@
-# Paw Pals' React Frontend
+# Paw Pals
 
-The live demo to the website can be accessed [here](https://prismatic-phoenix-69c302.netlify.app/).
+The live demo to the frontend web application can be accessed [here](https://paw-pals.netlify.app/).
 >Note: This is a bootcamp project where an interactive web application was created using React, Express.js and MongoDB
 
 ## Index
 
-1. [Project Summary](#project-summary)
-2. [UI/UX](#uiux)
-3. [Features](#features)
-4. [Testing](#testing)
-5. [Technologies Used](#technologies-used)
-6. [API & Sample Document](#api--sample-document)
-7. [Deployment](#deployment)
-8. [Credits](#credits)
+1. [Project Summary](#1-project-summary)
+2. [UI/UX](#2-uiux)
+3. [Features](#3-features)
+4. [Testing](#4-testing)
+5. [Technologies Used](#5-technologies-used)
+6. [API & Sample Document](#6-api--sample-document)
+7. [Deployment](#7-deployment)
+8. [Credits](#8-credits)
 
 
 ## 1. Project Summary
 
 ### Project Context
-Paw Pals provides a platform which enables current caretakers of animals (either organisations or individuals) to list the animal up for adoption or fostering. Interested adopters and fosterers can browse the animal listings on the platform. 
+Paw Pals provides a platform which enables current caretakers of animals (either organisations or individuals) to list the animal up for adoption or fostering. Interested adopters and fosterers can then browse the animal listings on the platform. 
 
 Most existing adoption and fostering web applications are operated by animal shelters. Individuals are unlikely to have access to those web applications and would resort to using social media to spread the word.
 
@@ -37,7 +37,7 @@ To provide a platform to link up current pet fosterers and potential pet adopter
 
 **Individual pet fosterers | Adults (20 - 60 years old)**:
 
-User Story: When pet fosterers are no longer to take care of the animals and would like to find potential fosterers/adopters, they often make a post on community groups hosted on social media platforms to spread the word. However, the reach of these posts is limited as only group members can view the content. 
+User Story: When individual pet fosterers are no longer able to care for the animals and would like to find potential fosterers/adopters, they often make a post on community groups hosted on social media platforms to spread the word. However, the reach of these posts is limited as only group members can view the content. 
 
 Acceptance Criteria: A convenient way to spread the word to a greater audience pool and increase the chances of finding a new adopter/fosterer.
 
@@ -65,6 +65,8 @@ Acceptance Criteria: To browse and search animals based on certain criteria (e.g
 * Mobile responsiveness
 
 ### Structure
+All pages of the web application can be accessed through the top navigation bar. The image below shows a flowchart of how different features can be accessed.
+
 <img src="src\assets\images\readme-images\Site Map.jpg" style="display: block">
 <br>
 
@@ -72,7 +74,7 @@ Acceptance Criteria: To browse and search animals based on certain criteria (e.g
 The wireframes for mobile and laptop display for the web application can be accessed [here](https://github.com/nanometre/pet-adoption-tgc-proj2-react/blob/main/src/assets/images/readme-images/skeleton.pdf)
 
 ### Surface
-**Colours**: Simple colour combination of green, white, and black is used. Green was selected as it typically symbolises life and renewal to reflect giving a new life to the animals by adopting them.
+**Colours**: Simple colour combination of green, white, and black is used. Green was selected as it typically symbolises life and renewal to reflect giving a new life to the animals by adopting them. White and black were selected to create contrast for readability of texts.
 
 **Font Choice**: Roboto font is used for the project. The sans-serif font style makes it legible and readable. Standard font sizes are used as the web application is catered for adults.
 
@@ -93,9 +95,9 @@ Manage animal listings | Users can input a caretaker email with existing animal 
 Limitations | Future Implementations to Resolve Limitations
 ----------- | -------------
 User must manually input date of birth when adding or editing listings. | For better UX, allow users to select the date of birth using a calendar.
-Images are "uploaded" by providing a working URL of an image and only one image can be "uploaded" for each listing. | Implement an image upload system to allow users to upload multiple image files from the web application. Then display all the images that are upload on the frontend web application.
-Managing animal listings only require users to input an email address, and it is not secure because the email address is visible in the animal details. | Implement a sign up and login system such that authorised users (current caretakers) can edit or delete the listings.
-Potential fosterers/adopters must manually email the caretaker to express interest to foster/adopt | Implement a form which users can fill up on the web application to express their interest. Upon submission of the form, the web application will directly send an email to the caretaker. Users would not need a separate email application to express their interest.
+Images are "uploaded" by providing a working URL of an image and only one image can be "uploaded" for each listing. | Implement an image upload system to allow users to upload multiple image files from the web application. Then display all the images that were uploaded on the frontend web application.
+Managing animal listings only require users to input an email address, and it is not secure because the email address is visible in the animal details. | Implement a sign up and login system such that only authorised users (current caretakers) can edit or delete the listings.
+Potential fosterers/adopters must manually email the caretaker to express interest to foster/adopt | Implement a form where users can fill up on the web application to express their interest. Upon submission of the form, the web application will directly send an email to the caretaker. Users would not need to use a separate email application to express their interest.
 
 
 ## 4. Testing
@@ -122,7 +124,7 @@ Manual and unit testing have been done for this project. The test cases for the 
 
   The custom RESTful API uses Express.js, a fast, unopinionated, minimalist web framework for Node.js.
 
-- [MondoDB](https://www.mongodb.com/)
+- [MongoDB](https://www.mongodb.com/)
 
   The custom RESTful API uses MongoDB, a document-oriented database, where the all the data is stored.
 
@@ -162,7 +164,7 @@ The sample animal record document can be found in "2. Document Design" of the [P
 
 
 ## 7. Deployment
-The frontend project is deployed on Netlify. The live demo to the web application can be accessed [here](https://prismatic-phoenix-69c302.netlify.app/). 
+The frontend project is deployed on Netlify. The live demo to the web application can be accessed [here](https://paw-pals.netlify.app/). 
 
 
 ## 8. Credits
