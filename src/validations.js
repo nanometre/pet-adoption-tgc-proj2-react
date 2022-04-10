@@ -18,9 +18,9 @@ export const addAnimalSchema = yup.object().shape({
         .required("Description is required")
         .typeError("Description must be in alphabets"),
     newAdoptFoster: yup.array()
-        .min(1, "At least one have to be selected")
-        .required("At least one have to be selected")
-        .typeError("At least one have to be selected"),
+        .min(1, "At least one has to be selected")
+        .required("At least one has to be selected")
+        .typeError("At least one has to be selected"),
     newCaretakerName: yup.string()
         .required("Caretaker name is required")
         .typeError("Caretaker name must be in alphabets"),
@@ -47,9 +47,9 @@ export const editListingSchema = yup.object().shape({
             "Date of birth must be in YYYY-MM-DD format")
         .required("Date of birth is required"),
     editAdoptFoster: yup.array()
-        .min(1, "At least one have to be selected")
-        .required("At least one have to be selected")
-        .typeError("At least one have to be selected"),
+        .min(1, "At least one has to be selected")
+        .required("At least one has to be selected")
+        .typeError("At least one has to be selected"),
     editDescription: yup.string()
         .required("Description is required")
         .typeError("Description must be in alphabets"),

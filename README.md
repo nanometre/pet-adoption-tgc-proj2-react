@@ -1,4 +1,6 @@
 # Paw Pals
+<img src="src\assets\images\readme-images\full-home-page-screenshot.png" style="display: block">
+<br>
 
 The live demo to the frontend web application can be accessed [here](https://paw-pals.netlify.app/).
 >Note: This is a bootcamp project where an interactive web application was created using React, Express.js and MongoDB
@@ -67,7 +69,7 @@ Acceptance Criteria: To browse and search animals based on certain criteria (e.g
 ### Structure
 All pages of the web application can be accessed through the top navigation bar. The image below shows a flowchart of how different features can be accessed.
 
-<img src="src\assets\images\readme-images\Site Map.jpg" style="display: block">
+<img src="src\assets\images\readme-images\site-map.jpg" style="display: block">
 <br>
 
 ### Skeleton
@@ -105,6 +107,8 @@ Potential fosterers/adopters must manually email the caretaker to express intere
 ### Test Cases
 Manual and unit testing have been done for this project. The test cases for the critical functionality of this project are documented [here](https://github.com/nanometre/pet-adoption-tgc-proj2-react/blob/main/src/assets/images/readme-images/test-cases.pdf).
 
+### Testing for Mobile Responsiveness
+Testing was done using Responsively across iPhone X, iPad, and Generic Laptop.
 
 
 ## 5. Technologies Used
