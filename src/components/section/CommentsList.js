@@ -25,7 +25,8 @@ export default function CommentsList(props) {
                         {props.animalComments[0].comments.map((comment, i) =>
                             <React.Fragment key={i}>
                                 <CommentSection i={i}
-                                    comment={comment} />
+                                    comment={comment}
+                                    deleteComment={props.deleteComment} />
                             </React.Fragment>
                         )}
                     </div>

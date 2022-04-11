@@ -84,7 +84,13 @@ export default class BrowseAndSearch extends React.Component {
             commentRating: '3',
         })
         await axios.post(this.props.COMMENTS_API_URL + "/" + animal_id, commentDetails)
-        this.props.processAddComment()
+        this.props.processAddDeleteComment()
+    }
+
+    // function to delete comments
+    deleteComment = async (commentId) => {
+        await axios.delete(this.props.COMMENTS_API_URL + "/" + commentId)
+        this.props.processAddDeleteComment()
     }
 
     renderResults = () => {
@@ -99,6 +105,7 @@ export default class BrowseAndSearch extends React.Component {
                                     comments={this.props.comments}
                                     setActive={this.props.setActive}
                                     postComment={this.postComment}
+                                    deleteComment={this.deleteComment}
                                     updateCommentFormField={this.updateCommentFormField}
                                     commentName={this.state.commentName}
                                     commentContent={this.state.commentContent}

@@ -49,7 +49,7 @@ class Main extends React.Component {
                 animals={this.state.animals}
                 comments={this.state.comments}
                 setActive={this.setActive}
-                processAddComment={this.processAddComment} />
+                processAddDeleteComment={this.processAddDeleteComment} />
         } else if (this.state.active === 'addAnimal') {
             return <AddAnimal ANIMALS_API_URL={this.ANIMALS_API_URL}
                 setActive={this.setActive}
@@ -89,7 +89,7 @@ class Main extends React.Component {
     }
 
     // function to process add comment by updating main state
-    processAddComment = async () => {
+    processAddDeleteComment = async () => {
         let response = await axios.get(this.COMMENTS_API_URL)
         this.setState({
             comments: response.data

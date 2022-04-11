@@ -92,7 +92,8 @@ export default function DisplayAnimalCard(props) {
                                 <hr />
                                 {/* comments */}
                                 <CommentsList animal_name={props.animal.name}
-                                    animalComments={animalComments} />
+                                    animalComments={animalComments}
+                                    deleteComment={props.deleteComment} />
                                 <hr />
                                 <div>
                                     <CommentForm animal_name={props.animal.name}
