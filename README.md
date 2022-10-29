@@ -162,7 +162,7 @@ Testing was done using Responsively across iPhone X, iPad, and Generic Laptop.
 
 
 ## 6. API & Sample Document
-This project makes use of a custom RESTful API which retrieves and manages a collection of animal records. The API was built using [Express.js](https://expressjs.com/) and uses [MongoDB](https://www.mongodb.com/) as the database. The source code and documentation for the API can be found here: [Paw Pals' RESTful API](https://github.com/nanometre/pet-adoption-tgc-proj2-express). The API is [hosted on Heroku](https://pet-adoption-tgc-proj2-express.herokuapp.com/) and is accessible from the frontend.
+This project makes use of a custom RESTful API which retrieves and manages a collection of animal records. The API was built using [Express.js](https://expressjs.com/) and uses [MongoDB](https://www.mongodb.com/) as the database. The source code and documentation for the API can be found here: [Paw Pals' RESTful API](https://github.com/nanometre/pet-adoption-tgc-proj2-express). The API is [hosted on Render](https://pet-adoption-tgc-proj2-express.onrender.com/) and is accessible from the frontend.
 
 The sample animal record document can be found in "2. Document Design" of the [Paw Pals' RESTful API repository](https://github.com/nanometre/pet-adoption-tgc-proj2-express#2-document-design).
 

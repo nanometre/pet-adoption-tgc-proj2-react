@@ -12,8 +12,8 @@ import '../assets/styles/page/main.css'
 
 
 class Main extends React.Component {
-    ANIMALS_API_URL = 'https://pet-adoption-tgc-proj2-express.herokuapp.com/animals'
-    COMMENTS_API_URL = 'https://pet-adoption-tgc-proj2-express.herokuapp.com/comments'
+    ANIMALS_API_URL = 'https://pet-adoption-tgc-proj2-express.onrender.com/animals'
+    COMMENTS_API_URL = 'https://pet-adoption-tgc-proj2-express.onrender.com/comments'
 
     state = {
         animals: [],
